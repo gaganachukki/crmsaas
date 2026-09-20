@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        
+        <!-- Left Panel: Graphic/Mockup -->
+        <div class="login-left">
+            <div class="bg-decorations">
+                <div class="dots-grid"></div>
+                <div class="curve-line"></div>
+                <div class="blue-blob top-right"></div>
+                <div class="blue-blob bottom-left"></div>
+            </div>
+            
+            <div class="mockup-container">
+                <!-- Dashboard Mockup -->
+                <div class="dash-mockup">
+                    <div class="dash-sidebar">
+                        <div class="dash-logo">
+                            <i class="fa-solid fa-layer-group" style="color:var(--primary-blue);"></i> Stackly
+                        </div>
+                        <ul class="dash-nav">
+                            <li class="active"><i class="fa-solid fa-house"></i> Dashboard</li>
+                            <li><i class="fa-solid fa-users"></i> Contacts</li>
+                            <li><i class="fa-solid fa-bag-shopping"></i> Deals</li>
+                            <li><i class="fa-solid fa-robot"></i> Automation</li>
+                            <li><i class="fa-solid fa-chart-line"></i> Reports</li>
+                            <li><i class="fa-solid fa-gear"></i> Settings</li>
+                        </ul>
+                    </div>
+                    <div class="dash-content">
+                        <!-- Top Revenue Card -->
+                        <div class="dash-card revenue-card">
+                            <div class="card-header">Total Revenue</div>
+                            <div class="revenue-val">$24,780 <span class="badge-green"><i class="fa-solid fa-arrow-up"></i> 12%</span></div>
+                            <div class="card-sub">vs. last 30 days</div>
+                            <svg class="mini-chart" viewBox="0 0 100 30">
+                                <path d="M0,25 L20,25 L35,15 L50,20 L65,10 L80,15 L100,0" fill="none" stroke="var(--primary-blue)" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        
+                        <div class="dash-row">
+                            <!-- Leads Card -->
+                            <div class="dash-card stat-card">
+                                <div class="card-header">New Leads</div>
+                                <div class="stat-val">248</div>
+                                <span class="badge-green text-sm"><i class="fa-solid fa-arrow-up"></i> 18%</span>
+                                <div class="icon-tr blue-light"><i class="fa-regular fa-user"></i></div>
+                            </div>
+                            <!-- Deals Card -->
+                            <div class="dash-card stat-card">
+                                <div class="card-header">Closed Deals</div>
+                                <div class="stat-val">86</div>
+                                <span class="badge-green text-sm"><i class="fa-solid fa-arrow-up"></i> 24%</span>
+                                <div class="icon-tr purple-light"><i class="fa-solid fa-chart-simple"></i></div>
+                            </div>
+                        </div>
+
+                        <!-- Bar Chart Card -->
+                        <div class="dash-card bar-chart-card">
+                            <div class="card-header">Sales Overview</div>
+                            <div class="bar-grid">
+                                <div class="bar-col"><div class="bar" style="height: 20%"></div><span>Jan</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 30%"></div><span>Feb</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 40%"></div><span>Mar</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 60%"></div><span>Apr</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 80%"></div><span>May</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 90%"></div><span>Jun</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Cards -->
+                <div class="float-card automate-card">
+                    <div class="icon-wrap-sm blue"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h5>Automate. Close. Grow.</h5>
+                    <p>Smarter CRM for modern businesses.</p>
+                    <div class="arrow-btn"><i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+
+                <div class="float-card save-time-card">
+                    <div class="icon-wrap-sm blue-solid"><i class="fa-solid fa-bolt"></i></div>
+                    <div>
+                        <h5>Save 10+ hours per week</h5>
+                        <p>Automate your workflows and focus on what matters.</p>
+                    </div>
+                </div>
+
+                <!-- Floating Image -->
+                <div class="float-image">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop" alt="Workspace">
+                    <div class="blue-accent-shape"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel: Login Form -->
+        <div class="login-right">
+            <!-- Top Right Nav -->
+            <div class="login-nav">
+                <a href="login.html" class="active">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign up</a>
+            </div>
+
+            <div class="login-form-wrapper">
+                <h1 class="text-blue">Welcome Back</h1>
+                <p class="subtitle">Discover a better way of spendings with Stackly.</p>
+
+                <button class="btn-google">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+                    Log in with Google
+                </button>
+
+                <div class="divider">
+                    <span>Or</span>
+                </div>
+
+                <form class="auth-form">
+                    <div class="input-group">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" placeholder="Enter your Email" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <div class="form-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember Me
+                        </label>
+                        <a href="#" class="forgot-pwd">Forget Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">Log in</button>
+                </form>
+
+                <p class="auth-footer">
+                    Not member yet? <a href="signup.html">Create an account</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

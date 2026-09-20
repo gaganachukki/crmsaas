@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar container">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html" class="active">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions" style="display: flex; gap: 24px; align-items: center;">
+            <a href="login.html" style="font-weight: 500;">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Blog Hero Section -->
+    <section class="blog-hero container">
+        <div class="text-center blog-header-text">
+            <h1>Latest news & insights.</h1>
+            <p class="subtitle">Stay ahead of the curve with our latest updates and expert insights into the world.</p>
+        </div>
+
+        <div class="featured-article split">
+            <div class="featured-image">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop" alt="Coding">
+            </div>
+            <div class="featured-content">
+                <span class="article-date text-blue">August 3, 2025</span>
+                <h2>How Orbit CRM boosts productivity and enhances customer loyalty.</h2>
+                <p>In today's fast-paced business landscape, efficiency and customer retention are key to staying ahead. Orbit CRM is designed to address these needs by streamlining your processes.</p>
+                <a href="#" class="btn btn-dark">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Articles -->
+    <section class="latest-articles container">
+        <h2 class="section-title">Latest articles.</h2>
+        
+        <div class="articles-grid">
+            <!-- Row 1 -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>Why automation tool is the future of business management.</h4>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>How to customize your CRM for maximum efficiency.</h4>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>Data driven decision making with CRM analytics.</h4>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>Transforming customer relation with next gen CRM solutions.</h4>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>Why CRM is the backbone of modern business success.</h4>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>10 reasons your business needs a powerful CRM system today.</h4>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>How Orbit CRM helps you close deals faster and smarter.</h4>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>CRM success stories real businesses, real results with Orbit.</h4>
+            </div>
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=500&auto=format&fit=crop" alt="Article Image">
+                <span class="article-date">August 3, 2025</span>
+                <h4>The ROI of CRM how Orbit helps you save time and money.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modified CTA Section for Blog (different button text and checkmarks) -->
+    <section class="cta-section container blog-cta">
+        <div class="cta-card blue-bg text-center">
+            <svg class="cta-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="white"/>
+                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="white"/>
+            </svg>
+            <h2 class="text-white">The modern solutions<br>to run your agency.</h2>
+            <a href="#" class="btn btn-dark">Request A Demo</a>
+            <div class="cta-guarantees">
+                <span><i class="fa-regular fa-square-check"></i> No credit card required.</span>
+                <span><i class="fa-regular fa-square-check"></i> Cancel at anytime.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modified Footer for Blog -->
+    <footer class="footer container blog-footer">
+        <div class="footer-top split-footer">
+            <div class="footer-brand big-brand">
+                <div class="logo">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                        <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+                    </svg>
+                    <span style="font-size: 2.5rem; color: #0F1115;">STACKLY</span>
+                </div>
+            </div>
+            <div class="footer-links three-cols">
+                <div class="link-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog & Article</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Error - 404</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Get in touch</h4>
+                    <ul>
+                        <li style="color:var(--dark-bg); font-weight:600; margin-bottom:16px;">Stackly@gmail.com</li>
+                    </ul>
+                    <div class="social-links dark-socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly. Inc. All rights reserved.</p>
+            <div class="bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Changelog</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

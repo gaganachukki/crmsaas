@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar container">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <div class="nav-actions" style="display: flex; gap: 24px; align-items: center;">
+            <a href="login.html" style="font-weight: 500;">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Contact Hero / Form Section -->
+    <section class="contact-hero container split">
+        <div class="contact-heading">
+            <h1>We are here to<br>help you.</h1>
+        </div>
+        <div class="contact-form-wrapper bg-light">
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="fname">First Name *</label>
+                    <input type="text" id="fname" placeholder="Your first name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="email@mail.com">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <input type="text" id="subject" placeholder="Add a subject">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" rows="4" placeholder="Write your message"></textarea>
+                </div>
+                <button type="button" class="btn btn-dark">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="contact-info-section container">
+        <h2 class="section-title">Contact Info</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                <h4>Call us</h4>
+                <p class="time">Mon-Fri from 8am to 5pm.</p>
+                <p class="detail">+1 (555) 000-0000</p>
+            </div>
+            <div class="info-card">
+                <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                <h4>Email us.</h4>
+                <p class="time">24/7 any day</p>
+                <p class="detail">Stackly@gmail.com</p>
+            </div>
+            <div class="info-card">
+                <div class="icon-box"><i class="fa-solid fa-comment-dots"></i></div>
+                <h4>Chat support.</h4>
+                <p class="time">Mon-Fri from 8am to 5pm.</p>
+                <p class="detail">Stackly@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (Contact page specific style) -->
+    <section class="contact-faq container split">
+        <div class="faq-intro">
+            <h2>Got questions? We've<br>got answers.</h2>
+            <p>The award-winning calendar app with powerful features including intuitive natural language text parsing.</p>
+        </div>
+        <div class="faq-list contact-faq-list">
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <h4>How does Orbit help in managing customer data?</h4>
+                    <i class="fa-solid fa-chevron-up"></i>
+                </div>
+                <div class="accordion-body">
+                    <p>Orbit centralizes all customer information in a single database, making it easy to access complete profiles, including contact details, past interactions, purchase history, and preferences. This comprehensive view allows.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Does Orbit provide automated workflow features?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body" style="display: none;">
+                    <p>Yes, we provide extensive workflow automation features to help streamline your daily tasks.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>How does Mintly's personalized alerts and notifications work?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body" style="display: none;">
+                    <p>You can set up custom triggers based on user behavior or specific data thresholds.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Can I use Mintly to manage recurring payments and subscriptions?</h4>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="accordion-body" style="display: none;">
+                    <p>Yes, Mintly fully supports subscription management and recurring billing cycles natively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section container blog-cta">
+        <div class="cta-card blue-bg text-center">
+            <svg class="cta-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="white"/>
+                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="white"/>
+            </svg>
+            <h2 class="text-white">The modern solutions<br>to run your agency.</h2>
+            <a href="#" class="btn btn-dark">Request A Demo</a>
+            <div class="cta-guarantees">
+                <span><i class="fa-regular fa-square-check"></i> No credit card required.</span>
+                <span><i class="fa-regular fa-square-check"></i> Cancel at anytime.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container blog-footer">
+        <div class="footer-top split-footer">
+            <div class="footer-brand big-brand">
+                <div class="logo">
+                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                        <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5-2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+                    </svg>
+                    <span style="font-size: 2.5rem; color: #0F1115;">STACKLY</span>
+                </div>
+            </div>
+            <div class="footer-links three-cols">
+                <div class="link-col">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog & Article</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Error - 404</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Get in touch</h4>
+                    <ul>
+                        <li style="color:var(--dark-bg); font-weight:600; margin-bottom:16px;">Stackly@gmail.com</li>
+                    </ul>
+                    <div class="social-links dark-socials">
+                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly. Inc. All rights reserved.</p>
+            <div class="bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Changelog</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

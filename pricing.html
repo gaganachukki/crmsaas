@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - Pricing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/pricing.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar container">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+            </svg>
+            <span>STACKLY</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="pricing.html" class="active">Pricing</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-actions" style="display: flex; gap: 24px; align-items: center;">
+            <a href="login.html" style="font-weight: 500;">Login</a>
+            <a href="signup.html" class="btn btn-primary">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Pricing Hero Section -->
+    <section class="pricing-hero container">
+        <div class="pricing-header-split">
+            <h1 class="pricing-title">Choose the plan that<br>fits your business.</h1>
+            <div class="billing-toggle">
+                <span>Monthly</span>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="billing-toggle">
+                    <label for="billing-toggle"></label>
+                </div>
+                <span>Annually <span class="discount-badge">Save 20%</span></span>
+            </div>
+        </div>
+
+        <div class="pricing-cards">
+            <!-- Starter Plan -->
+            <div class="price-card">
+                <h3>Starter Plan</h3>
+                <p class="plan-desc">Best for small teams and startups getting started with CRM.</p>
+                <div class="price">
+                    <span class="currency">$</span><span class="amount">29</span><span class="period">/month</span>
+                </div>
+                <a href="#" class="btn btn-dark">Buy Plan</a>
+                <ul class="features-list-card text-left">
+                    <li><i class="fa-solid fa-check"></i> Basic contact management</li>
+                    <li><i class="fa-solid fa-check"></i> Email integration and tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Sales pipeline management</li>
+                    <li><i class="fa-solid fa-check"></i> Standard reports and dashboards</li>
+                </ul>
+            </div>
+            
+            <!-- Business Plan -->
+            <div class="price-card">
+                <h3>Business Plan</h3>
+                <p class="plan-desc">Ideal for growing companies that need advanced CRM tools to scale.</p>
+                <div class="price">
+                    <span class="currency">$</span><span class="amount">59</span><span class="period">/month</span>
+                </div>
+                <a href="#" class="btn btn-dark">Buy Plan</a>
+                <ul class="features-list-card text-left">
+                    <li><i class="fa-solid fa-check"></i> Advanced sales workflow automation</li>
+                    <li><i class="fa-solid fa-check"></i> Custom data and fields</li>
+                    <li><i class="fa-solid fa-check"></i> Advanced lead scoring & tracking</li>
+                    <li><i class="fa-solid fa-check"></i> Access to all third-party integrations</li>
+                </ul>
+            </div>
+
+            <!-- Enterprise Plan -->
+            <div class="price-card dark">
+                <h3>Enterprise Plan</h3>
+                <p class="plan-desc">Large scale organizations with complex workflows and multiple operations.</p>
+                <div class="price">
+                    <span class="currency">$</span><span class="amount">99</span><span class="period">/month</span>
+                </div>
+                <a href="#" class="btn btn-light-full">Buy Plan</a>
+                <ul class="features-list-card text-left">
+                    <li><i class="fa-solid fa-check-circle" style="color:var(--primary-blue)"></i> Dedicated Account Manager</li>
+                    <li><i class="fa-solid fa-check-circle" style="color:var(--primary-blue)"></i> 24/7 Priority Support</li>
+                    <li><i class="fa-solid fa-check-circle" style="color:var(--primary-blue)"></i> Custom security and on-boarding</li>
+                    <li><i class="fa-solid fa-check-circle" style="color:var(--primary-blue)"></i> Advanced predictive AI tools</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logos Section -->
+    <section class="pricing-logos container text-center">
+        <p class="small-title">Trusted by 10,000+ businesses of the world</p>
+        <div class="logos-grid">
+            <div class="logo-item"><i class="fa-brands fa-slack"></i> logoipsum</div>
+            <div class="logo-item"><i class="fa-brands fa-stripe"></i> logoipsum</div>
+            <div class="logo-item"><i class="fa-brands fa-aws"></i> logoipsum</div>
+            <div class="logo-item"><i class="fa-brands fa-github"></i> logoipsum</div>
+            <div class="logo-item"><i class="fa-brands fa-figma"></i> logoipsum</div>
+        </div>
+    </section>
+
+    <!-- Compare Plans Table -->
+    <section class="compare-plans container">
+        <div class="text-center">
+            <h2>Compare Our Plans</h2>
+            <p class="subtitle">Compare features and pricing details.</p>
+        </div>
+
+        <div class="table-container">
+            <table class="compare-table">
+                <thead>
+                    <tr>
+                        <th class="text-left">Overview</th>
+                        <th>Free Plan</th>
+                        <th>Basic Plan</th>
+                        <th>Professional Plan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-left">Monthly Price</td>
+                        <td class="text-gray">Free for lifetime</td>
+                        <td>$29 / user / month</td>
+                        <td>$99 / user / month</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Users</td>
+                        <td class="text-gray">3</td>
+                        <td>25</td>
+                        <td>Unlimited</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Contact Management</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Lead Tracking</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Email Integration</td>
+                        <td class="text-gray">Limited</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Task Management</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <!-- Sales Automation -->
+                    <tr class="section-header">
+                        <td colspan="4" class="text-left">Sales Automation</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Automation</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td>Advanced Workflows</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Reporting & Analytics</td>
+                        <td class="text-gray">Basic</td>
+                        <td>Advanced Analytics</td>
+                        <td>Custom Reports</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Custom Fields</td>
+                        <td class="text-gray">-</td>
+                        <td class="text-gray">Limited</td>
+                        <td>Fully Customizable</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">API Access</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td>Priority API limits</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Pipeline Management</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td>Advanced Pipeline</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Role Permissions</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Custom Dashboards</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Live Support</td>
+                        <td class="text-gray">-</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+
+                    <!-- Additional Features -->
+                    <tr class="section-header">
+                        <td colspan="4" class="text-left">Additional</td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Email / Chat Support</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Knowledge Base Access</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Training</td>
+                        <td class="text-gray">-</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-left">Data Backup</td>
+                        <td class="text-gray">-</td>
+                        <td class="text-gray">-</td>
+                        <td><div class="check-circle-blue"><i class="fa-solid fa-check"></i></div></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td><a href="#" class="btn btn-dark">Choose Free Plan</a></td>
+                        <td><a href="#" class="btn btn-dark">Choose Basic Plan</a></td>
+                        <td><a href="#" class="btn btn-dark">Choose Pro Plan</a></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </section>
+
+    <!-- Numbers Showcase -->
+    <section class="showcase container text-center">
+        <h2>Numbers behind our influence.</h2>
+        <p class="subtitle">Join the industry leaders and propel your business growth with our CRM solution.</p>
+        
+        <div class="grid-showcase">
+            <div class="grid-item item-1">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Laptop user">
+            </div>
+            <div class="grid-item item-2 bg-orange text-white">
+                <div class="large-number">100k</div>
+                <p>Client retention rate</p>
+                <span class="small-desc">Our platform ensures our users stay with us longer and effectively grow their business.</span>
+            </div>
+            <div class="grid-item item-3 bg-blue text-white">
+                <div class="large-number" style="font-size: 2.5rem; text-align:left;">90%</div>
+                <h4 style="margin-top:auto;">Inc. conversions</h4>
+                <p>Use insights to dramatically boost conversion rates in your sales pipeline.</p>
+            </div>
+            <div class="grid-item item-4">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400&auto=format&fit=crop" alt="Phone user">
+            </div>
+            <div class="grid-item item-5 bg-black text-white" style="text-align:left; align-items:flex-start;">
+                <div class="large-number" style="font-size: 2.5rem;">80%</div>
+                <h4 style="margin-top:auto;">Increased data accuracy</h4>
+                <p>Automated processes manage data with 100% accuracy reducing human errors.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq container split">
+        <div class="faq-intro">
+            <h2>Got questions? We've<br>got answers.</h2>
+            <p>Can't find the answer you're looking for? Reach out to our customer support team.</p>
+        </div>
+        <div class="faq-list">
+            <div class="accordion-item active">
+                <div class="accordion-header">
+                    <h4>What payment methods do you accept?</h4>
+                    <i class="fa-solid fa-minus"></i>
+                </div>
+                <div class="accordion-body">
+                    <p>We accept all major credit cards including Visa, Mastercard, and American Express. We also support PayPal and wire transfers for annual enterprise plans.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Can I cancel my subscription anytime?</h4>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="accordion-body" style="display: none;">
+                    <p>Yes, you can cancel your subscription at any time from your account settings. You will have access to your plan until the end of the billing cycle.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>Do you offer a free trial?</h4>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="accordion-body" style="display: none;">
+                    <p>We offer a 14-day free trial on all plans, no credit card required.</p>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <div class="accordion-header">
+                    <h4>How secure is my data?</h4>
+                    <i class="fa-solid fa-plus"></i>
+                </div>
+                <div class="accordion-body" style="display: none;">
+                    <p>Your data is secured with enterprise-grade encryption and we are SOC2 compliant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section container">
+        <div class="cta-card blue-bg text-center">
+            <svg class="cta-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="white"/>
+                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="white"/>
+            </svg>
+            <h2 class="text-white">The modern solutions<br>for any agency.</h2>
+            <a href="#" class="btn btn-dark">Get Started Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                        <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+                    </svg>
+                    <span>STACKLY</span>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Newsroom</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#">Integrations</a></li>
+                        <li><a href="#">Changelog</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                    </ul>
+                </div>
+                <div class="link-col">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly. All rights reserved.</p>
+            <div class="bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>

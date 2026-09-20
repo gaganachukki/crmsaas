@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly - User Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/userdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+    <div class="dashboard-layout">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
+                    <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
+                </svg>
+                <span>STACKLY</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li class="nav-title">Menu</li>
+                <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="#"><i class="fa-solid fa-address-book"></i> Contacts</a></li>
+                <li><a href="#"><i class="fa-solid fa-handshake"></i> Deals</a></li>
+                <li><a href="#"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+            </ul>
+            <ul class="sidebar-nav bottom-nav">
+                <li class="nav-title">System</li>
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Wrapper -->
+        <div class="main-wrapper">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search contacts, deals, or tasks...">
+                </div>
+                <div class="topbar-actions">
+                    <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="notify-dot"></span></button>
+                    <div class="user-profile">
+                        <img src="https://i.pravatar.cc/150?img=68" alt="Profile">
+                        <span>James Wilson</span>
+                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <main class="dashboard-content">
+                <div class="page-header">
+                    <div>
+                        <h1>Welcome back, James! 👋</h1>
+                        <p>Here's what's happening with your sales today.</p>
+                    </div>
+                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add New Deal</button>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue"><i class="fa-solid fa-wallet"></i></div>
+                        <div class="stat-info">
+                            <p>Total Revenue</p>
+                            <h3>$45,231.89</h3>
+                            <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 12.5%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon orange"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-info">
+                            <p>New Leads</p>
+                            <h3>1,245</h3>
+                            <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 8.2%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green"><i class="fa-solid fa-handshake"></i></div>
+                        <div class="stat-info">
+                            <p>Closed Deals</p>
+                            <h3>342</h3>
+                            <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 4.1%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple"><i class="fa-solid fa-clock"></i></div>
+                        <div class="stat-info">
+                            <p>Active Tasks</p>
+                            <h3>28</h3>
+                            <span class="trend down"><i class="fa-solid fa-arrow-down"></i> 2.4%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-row">
+                    <!-- Chart Area -->
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h4>Sales Overview</h4>
+                            <select class="small-select"><option>This Year</option></select>
+                        </div>
+                        <div class="mock-chart-area">
+                            <div class="bar-grid">
+                                <div class="bar-col"><div class="bar" style="height: 30%"></div><span>Jan</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 45%"></div><span>Feb</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 60%"></div><span>Mar</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 50%"></div><span>Apr</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 80%"></div><span>May</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 70%"></div><span>Jun</span></div>
+                                <div class="bar-col"><div class="bar" style="height: 90%"></div><span>Jul</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Contacts -->
+                    <div class="card contacts-card">
+                        <div class="card-header">
+                            <h4>Recent Contacts</h4>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="contact-list">
+                            <div class="contact-item">
+                                <img src="https://i.pravatar.cc/150?img=1" alt="Avatar">
+                                <div class="contact-text">
+                                    <h5>Sarah Connor</h5>
+                                    <p>Tech Corp</p>
+                                </div>
+                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                            </div>
+                            <div class="contact-item">
+                                <img src="https://i.pravatar.cc/150?img=2" alt="Avatar">
+                                <div class="contact-text">
+                                    <h5>Mike Ross</h5>
+                                    <p>Pearson Specter</p>
+                                </div>
+                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                            </div>
+                            <div class="contact-item">
+                                <img src="https://i.pravatar.cc/150?img=3" alt="Avatar">
+                                <div class="contact-text">
+                                    <h5>Harvey Specter</h5>
+                                    <p>Pearson Specter</p>
+                                </div>
+                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                            </div>
+                            <div class="contact-item">
+                                <img src="https://i.pravatar.cc/150?img=4" alt="Avatar">
+                                <div class="contact-text">
+                                    <h5>Rachel Zane</h5>
+                                    <p>Zane Law</p>
+                                </div>
+                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Table -->
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h4>Active Deals</h4>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Deal Name</th>
+                                    <th>Company</th>
+                                    <th>Amount</th>
+                                    <th>Stage</th>
+                                    <th>Closing Date</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Enterprise Software License</strong></td>
+                                    <td>Acme Corp</td>
+                                    <td>$12,500</td>
+                                    <td><span class="status badge-blue">Negotiation</span></td>
+                                    <td>Oct 12, 2026</td>
+                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Annual Maintenance Contract</strong></td>
+                                    <td>Global Tech</td>
+                                    <td>$5,200</td>
+                                    <td><span class="status badge-orange">Proposal</span></td>
+                                    <td>Oct 15, 2026</td>
+                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cloud Migration Services</strong></td>
+                                    <td>Stark Industries</td>
+                                    <td>$45,000</td>
+                                    <td><span class="status badge-green">Won</span></td>
+                                    <td>Sep 10, 2026</td>
+                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Consulting Retainer</strong></td>
+                                    <td>Wayne Enterprises</td>
+                                    <td>$8,000</td>
+                                    <td><span class="status badge-blue">In Progress</span></td>
+                                    <td>Oct 20, 2026</td>
+                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* Contact Page Specific Styles */
+
+/* Contact Hero */
+.contact-hero {
+    padding: 80px 24px;
+    align-items: flex-start;
+}
+.contact-heading h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin: 0;
+}
+.contact-form-wrapper {
+    padding: 40px;
+}
+.contact-form .form-group {
+    margin-bottom: 24px;
+}
+.contact-form label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--dark-bg);
+}
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    color: var(--dark-bg);
+    outline: none;
+    transition: border-color 0.2s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-blue);
+}
+.contact-form .btn {
+    margin-top: 8px;
+}
+
+/* Contact Info Section */
+.contact-info-section {
+    padding: 40px 24px 80px;
+}
+.contact-info-section .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+}
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-blue);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    margin-bottom: 24px;
+}
+.info-card h4 {
+    font-size: 1.25rem;
+    margin-bottom: 12px;
+}
+.info-card .time {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-bottom: 16px;
+}
+.info-card .detail {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--dark-bg);
+    margin: 0;
+}
+
+/* Contact FAQ Overrides */
+.contact-faq {
+    padding: 80px 24px 100px;
+    align-items: flex-start;
+}
+.contact-faq-list .accordion-item {
+    background-color: var(--light-bg);
+    border: none;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    padding: 24px;
+    transition: all 0.3s;
+}
+.contact-faq-list .accordion-header {
+    margin: 0;
+}
+.contact-faq-list .accordion-header h4 {
+    font-size: 1rem;
+}
+.contact-faq-list .accordion-header i {
+    background: var(--dark-bg);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+.contact-faq-list .accordion-item.active {
+    background-color: var(--dark-bg);
+    color: white;
+}
+.contact-faq-list .accordion-item.active .accordion-header h4 {
+    color: white;
+}
+.contact-faq-list .accordion-item.active .accordion-header i {
+    background: white;
+    color: var(--dark-bg);
+}
+.contact-faq-list .accordion-item.active .accordion-body {
+    color: rgba(255, 255, 255, 0.8);
+    padding-top: 16px;
+}
+.contact-faq-list .accordion-item:not(.active) .accordion-body {
+    padding-top: 16px;
+}
+
+/* Reusing CTA & Footer from Blog */
+.blog-cta {
+    margin-bottom: 80px;
+}
+.cta-guarantees {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 24px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+}
+.cta-guarantees i { margin-right: 8px; }
+
+.blog-footer { padding-top: 60px; }
+.split-footer { display: flex; justify-content: space-between; gap: 60px; }
+.big-brand { flex: 1; }
+.three-cols { flex: 2; display: flex; justify-content: space-between; }
+.dark-socials a {
+    background-color: transparent;
+    border: 1px solid var(--dark-bg);
+    color: var(--dark-bg);
+    transition: all 0.3s;
+}
+.dark-socials a:hover {
+    background-color: var(--dark-bg);
+    color: white;
+}
+.three-cols .link-col h4 { color: var(--gray-text); font-weight: 500; font-size: 0.95rem; margin-bottom: 24px; }
+.three-cols .link-col ul li a { color: var(--dark-bg); font-weight: 600; }
+.three-cols .link-col ul li a:hover { color: var(--primary-blue); }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .contact-hero { flex-direction: column; }
+    .contact-heading h1 { font-size: 3.5rem; margin-bottom: 40px;}
+    .contact-form-wrapper { width: 100%; }
+    .info-grid { grid-template-columns: 1fr; }
+    .split-footer { flex-direction: column; }
+    .three-cols { flex-wrap: wrap; gap: 40px; }
+}
