@@ -8,36 +8,38 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="CSS/pricing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar container">
-        <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-            </svg>
-            <span>STACKLY</span>
-        </div>
-        <ul class="nav-links">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.webp" alt="Stackly" class="brand-logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="pricing.html" class="active">Pricing</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-login-item"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a></li>
         </ul>
-        <div class="nav-actions" style="display: flex; gap: 24px; align-items: center;">
-            <a href="login.html" style="font-weight: 500;">Login</a>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">Login</a>
             <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
 
     <!-- Pricing Hero Section -->
     <section class="pricing-hero container">
         <div class="pricing-header-split">
-            <h1 class="pricing-title">Choose the plan that<br>fits your business.</h1>
+            <h1 class="pricing-title typewriter-hero">Choose the plan that<br>fits your business.</h1>
             <div class="billing-toggle">
                 <span>Monthly</span>
                 <div class="toggle-switch">
@@ -56,7 +58,7 @@
                 <div class="price">
                     <span class="currency">$</span><span class="amount">29</span><span class="period">/month</span>
                 </div>
-                <a href="#" class="btn btn-dark">Buy Plan</a>
+                <a href="404.html" class="btn btn-dark">Buy Plan</a>
                 <ul class="features-list-card text-left">
                     <li><i class="fa-solid fa-check"></i> Basic contact management</li>
                     <li><i class="fa-solid fa-check"></i> Email integration and tracking</li>
@@ -72,7 +74,7 @@
                 <div class="price">
                     <span class="currency">$</span><span class="amount">59</span><span class="period">/month</span>
                 </div>
-                <a href="#" class="btn btn-dark">Buy Plan</a>
+                <a href="404.html" class="btn btn-dark">Buy Plan</a>
                 <ul class="features-list-card text-left">
                     <li><i class="fa-solid fa-check"></i> Advanced sales workflow automation</li>
                     <li><i class="fa-solid fa-check"></i> Custom data and fields</li>
@@ -88,7 +90,7 @@
                 <div class="price">
                     <span class="currency">$</span><span class="amount">99</span><span class="period">/month</span>
                 </div>
-                <a href="#" class="btn btn-light-full">Buy Plan</a>
+                <a href="404.html" class="btn btn-light-full">Buy Plan</a>
                 <ul class="features-list-card text-left">
                     <li><i class="fa-solid fa-check-circle" style="color:var(--primary-blue)"></i> Dedicated Account Manager</li>
                     <li><i class="fa-solid fa-check-circle" style="color:var(--primary-blue)"></i> 24/7 Priority Support</li>
@@ -250,9 +252,9 @@
                 <tfoot>
                     <tr>
                         <td></td>
-                        <td><a href="#" class="btn btn-dark">Choose Free Plan</a></td>
-                        <td><a href="#" class="btn btn-dark">Choose Basic Plan</a></td>
-                        <td><a href="#" class="btn btn-dark">Choose Pro Plan</a></td>
+                        <td><a href="404.html" class="btn btn-dark">Choose Free Plan</a></td>
+                        <td><a href="404.html" class="btn btn-dark">Choose Basic Plan</a></td>
+                        <td><a href="404.html" class="btn btn-dark">Choose Pro Plan</a></td>
                     </tr>
                 </tfoot>
             </table>
@@ -266,7 +268,7 @@
         
         <div class="grid-showcase">
             <div class="grid-item item-1">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Laptop user">
+                <img src="assets/laptop-user.webp" alt="Laptop user">
             </div>
             <div class="grid-item item-2 bg-orange text-white">
                 <div class="large-number">100k</div>
@@ -279,7 +281,7 @@
                 <p>Use insights to dramatically boost conversion rates in your sales pipeline.</p>
             </div>
             <div class="grid-item item-4">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400&auto=format&fit=crop" alt="Phone user">
+                <img src="assets/phone-user.webp" alt="Phone user">
             </div>
             <div class="grid-item item-5 bg-black text-white" style="text-align:left; align-items:flex-start;">
                 <div class="large-number" style="font-size: 2.5rem;">80%</div>
@@ -343,7 +345,7 @@
                 <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="white"/>
             </svg>
             <h2 class="text-white">The modern solutions<br>for any agency.</h2>
-            <a href="#" class="btn btn-dark">Get Started Now</a>
+            <a href="404.html" class="btn btn-dark">Get Started Now</a>
         </div>
     </section>
 
@@ -351,61 +353,52 @@
     <footer class="footer container">
         <div class="footer-top">
             <div class="footer-brand">
-                <div class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                        <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-                    </svg>
-                    <span>STACKLY</span>
-                </div>
+                <a href="index.html" class="logo">
+                    <img src="assets/footer-logo.webp" alt="Stackly" class="footer-big-logo">
+                </a>
             </div>
             <div class="footer-links">
                 <div class="link-col">
-                    <h4>Company</h4>
+                    <h4>About</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Newsroom</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="link-col">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">Features</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="404.html">Career</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Changelog</a></li>
                     </ul>
                 </div>
                 <div class="link-col">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="blog.html">Blog & Article</a></li>
+                        <li><a href="404.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">Error - 404</a></li>
                     </ul>
                 </div>
-                <div class="link-col">
-                    <h4>Follow Us</h4>
+                <div class="link-col contact-col">
+                    <h4>Get in touch</h4>
+                    <p class="footer-email"><a href="mailto:Stackly@gmail.com">Stackly@gmail.com</a></p>
                     <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Stackly. All rights reserved.</p>
+            <p>&copy; 2026 Stackly, Inc. All rights reserved.</p>
             <div class="bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Changelog</a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="CSS/userdashboard.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -16,24 +17,25 @@
         
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="sidebar-brand">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                    <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-                </svg>
-                <span>STACKLY</span>
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <img src="assets/logo.webp" alt="Stackly" class="brand-logo">
+                </a>
+                <button class="sidebar-close-btn" id="sidebar-close-btn" aria-label="Close sidebar">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
             <ul class="sidebar-nav">
                 <li class="nav-title">Menu</li>
-                <li class="active"><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
-                <li><a href="#"><i class="fa-solid fa-address-book"></i> Contacts</a></li>
-                <li><a href="#"><i class="fa-solid fa-handshake"></i> Deals</a></li>
-                <li><a href="#"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
-                <li><a href="#"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
+                <li class="active" data-view="dashboard"><a href="#dashboard"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li data-view="contacts"><a href="#contacts"><i class="fa-solid fa-address-book"></i> Contacts</a></li>
+                <li data-view="deals"><a href="#deals"><i class="fa-solid fa-handshake"></i> Deals</a></li>
+                <li data-view="tasks"><a href="#tasks"><i class="fa-solid fa-list-check"></i> Tasks</a></li>
+                <li data-view="reports"><a href="#reports"><i class="fa-solid fa-chart-pie"></i> Reports</a></li>
             </ul>
             <ul class="sidebar-nav bottom-nav">
                 <li class="nav-title">System</li>
-                <li><a href="#"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                <li data-view="settings"><a href="#settings"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 <li><a href="login.html"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a></li>
             </ul>
         </aside>
@@ -42,14 +44,19 @@
         <div class="main-wrapper">
             <!-- Topbar -->
             <header class="topbar">
-                <div class="search-bar">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search contacts, deals, or tasks...">
+                <div class="topbar-left">
+                    <button class="mobile-sidebar-toggle" id="mobile-sidebar-toggle" aria-label="Toggle sidebar menu">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" placeholder="Search contacts, deals, or tasks...">
+                    </div>
                 </div>
                 <div class="topbar-actions">
-                    <button class="icon-btn"><i class="fa-regular fa-bell"></i><span class="notify-dot"></span></button>
+                    <button class="icon-btn" onclick="window.location.href='404.html'"><i class="fa-regular fa-bell"></i><span class="notify-dot"></span></button>
                     <div class="user-profile">
-                        <img src="https://i.pravatar.cc/150?img=68" alt="Profile">
+                        <div class="user-avatar-initials">JW</div>
                         <span>James Wilson</span>
                         <i class="fa-solid fa-chevron-down text-xs"></i>
                     </div>
@@ -58,170 +65,915 @@
 
             <!-- Dashboard Content -->
             <main class="dashboard-content">
-                <div class="page-header">
-                    <div>
-                        <h1>Welcome back, James! 👋</h1>
-                        <p>Here's what's happening with your sales today.</p>
-                    </div>
-                    <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> Add New Deal</button>
-                </div>
 
-                <!-- Stats Grid -->
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon blue"><i class="fa-solid fa-wallet"></i></div>
-                        <div class="stat-info">
-                            <p>Total Revenue</p>
-                            <h3>$45,231.89</h3>
-                            <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 12.5%</span>
+                <!-- 1. MAIN DASHBOARD VIEW -->
+                <section class="dashboard-view active" id="view-dashboard">
+                    <div class="page-header">
+                        <div>
+                            <h1>Welcome back, James! 👋</h1>
+                            <p>Here's what's happening with your sales today.</p>
                         </div>
+                        <button class="btn btn-primary" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Add New Deal</button>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-icon orange"><i class="fa-solid fa-users"></i></div>
-                        <div class="stat-info">
-                            <p>New Leads</p>
-                            <h3>1,245</h3>
-                            <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 8.2%</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon green"><i class="fa-solid fa-handshake"></i></div>
-                        <div class="stat-info">
-                            <p>Closed Deals</p>
-                            <h3>342</h3>
-                            <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 4.1%</span>
-                        </div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-icon purple"><i class="fa-solid fa-clock"></i></div>
-                        <div class="stat-info">
-                            <p>Active Tasks</p>
-                            <h3>28</h3>
-                            <span class="trend down"><i class="fa-solid fa-arrow-down"></i> 2.4%</span>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="content-row">
-                    <!-- Chart Area -->
-                    <div class="card chart-card">
+                    <!-- Stats Grid -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon blue"><i class="fa-solid fa-wallet"></i></div>
+                            <div class="stat-info">
+                                <p>Total Revenue</p>
+                                <h3>$45,231.89</h3>
+                                <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 12.5%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon orange"><i class="fa-solid fa-users"></i></div>
+                            <div class="stat-info">
+                                <p>New Leads</p>
+                                <h3>1,245</h3>
+                                <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 8.2%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="fa-solid fa-handshake"></i></div>
+                            <div class="stat-info">
+                                <p>Closed Deals</p>
+                                <h3>342</h3>
+                                <span class="trend up"><i class="fa-solid fa-arrow-up"></i> 4.1%</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon purple"><i class="fa-solid fa-clock"></i></div>
+                            <div class="stat-info">
+                                <p>Active Tasks</p>
+                                <h3>28</h3>
+                                <span class="trend down"><i class="fa-solid fa-arrow-down"></i> 2.4%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-row">
+                        <!-- Chart Area -->
+                        <div class="card chart-card">
+                            <div class="card-header">
+                                <h4>Sales Overview</h4>
+                                <select class="small-select"><option>This Year</option></select>
+                            </div>
+                            <div class="mock-chart-area">
+                                <div class="bar-grid">
+                                    <div class="bar-col"><div class="bar" style="height: 30%"></div><span>Jan</span></div>
+                                    <div class="bar-col"><div class="bar" style="height: 45%"></div><span>Feb</span></div>
+                                    <div class="bar-col"><div class="bar" style="height: 60%"></div><span>Mar</span></div>
+                                    <div class="bar-col"><div class="bar" style="height: 50%"></div><span>Apr</span></div>
+                                    <div class="bar-col"><div class="bar" style="height: 80%"></div><span>May</span></div>
+                                    <div class="bar-col"><div class="bar" style="height: 70%"></div><span>Jun</span></div>
+                                    <div class="bar-col"><div class="bar" style="height: 90%"></div><span>Jul</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Recent Contacts -->
+                        <div class="card contacts-card">
+                            <div class="card-header">
+                                <h4>Recent Contacts</h4>
+                                <a href="#contacts" class="view-all">View All</a>
+                            </div>
+                            <div class="contact-list">
+                                <div class="contact-item">
+                                    <img src="assets/avatar-1.webp" alt="Avatar">
+                                    <div class="contact-text">
+                                        <h5>Sarah Connor</h5>
+                                        <p>Tech Corp</p>
+                                    </div>
+                                    <a href="404.html" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                                </div>
+                                <div class="contact-item">
+                                    <img src="assets/avatar-2.webp" alt="Avatar">
+                                    <div class="contact-text">
+                                        <h5>Mike Ross</h5>
+                                        <p>Pearson Specter</p>
+                                    </div>
+                                    <a href="404.html" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                                </div>
+                                <div class="contact-item">
+                                    <img src="assets/avatar-3.webp" alt="Avatar">
+                                    <div class="contact-text">
+                                        <h5>Harvey Specter</h5>
+                                        <p>Pearson Specter</p>
+                                    </div>
+                                    <a href="404.html" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                                </div>
+                                <div class="contact-item">
+                                    <img src="assets/avatar-4.webp" alt="Avatar">
+                                    <div class="contact-text">
+                                        <h5>Rachel Zane</h5>
+                                        <p>Zane Law</p>
+                                    </div>
+                                    <a href="404.html" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Table -->
+                    <div class="card table-card">
                         <div class="card-header">
-                            <h4>Sales Overview</h4>
-                            <select class="small-select"><option>This Year</option></select>
+                            <h4>Active Deals</h4>
                         </div>
-                        <div class="mock-chart-area">
-                            <div class="bar-grid">
-                                <div class="bar-col"><div class="bar" style="height: 30%"></div><span>Jan</span></div>
-                                <div class="bar-col"><div class="bar" style="height: 45%"></div><span>Feb</span></div>
-                                <div class="bar-col"><div class="bar" style="height: 60%"></div><span>Mar</span></div>
-                                <div class="bar-col"><div class="bar" style="height: 50%"></div><span>Apr</span></div>
-                                <div class="bar-col"><div class="bar" style="height: 80%"></div><span>May</span></div>
-                                <div class="bar-col"><div class="bar" style="height: 70%"></div><span>Jun</span></div>
-                                <div class="bar-col"><div class="bar" style="height: 90%"></div><span>Jul</span></div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Deal Name</th>
+                                        <th>Company</th>
+                                        <th>Amount</th>
+                                        <th>Stage</th>
+                                        <th>Closing Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Enterprise Software License</strong></td>
+                                        <td>Acme Corp</td>
+                                        <td>$12,500</td>
+                                        <td><span class="status badge-blue">Negotiation</span></td>
+                                        <td>Oct 12, 2026</td>
+                                        <td><button class="icon-btn-small" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Annual Maintenance Contract</strong></td>
+                                        <td>Global Tech</td>
+                                        <td>$5,200</td>
+                                        <td><span class="status badge-orange">Proposal</span></td>
+                                        <td>Oct 15, 2026</td>
+                                        <td><button class="icon-btn-small" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Cloud Migration Services</strong></td>
+                                        <td>Stark Industries</td>
+                                        <td>$45,000</td>
+                                        <td><span class="status badge-green">Won</span></td>
+                                        <td>Sep 10, 2026</td>
+                                        <td><button class="icon-btn-small" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Consulting Retainer</strong></td>
+                                        <td>Wayne Enterprises</td>
+                                        <td>$8,000</td>
+                                        <td><span class="status badge-blue">In Progress</span></td>
+                                        <td>Oct 20, 2026</td>
+                                        <td><button class="icon-btn-small" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. CONTACTS VIEW -->
+                <section class="dashboard-view" id="view-contacts">
+                    <div class="page-header">
+                        <div>
+                            <h1>Contact Directory 👥</h1>
+                            <p>Manage relationships, client communication history, and key accounts.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='404.html'"><i class="fa-solid fa-user-plus"></i> Add New Contact</button>
+                    </div>
+
+                    <div class="view-action-bar">
+                        <div class="filter-pills">
+                            <button class="filter-pill active">All Contacts (24)</button>
+                            <button class="filter-pill">Customers (14)</button>
+                            <button class="filter-pill">Leads (8)</button>
+                            <button class="filter-pill">VIP Partners (2)</button>
+                        </div>
+                        <div class="view-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Filter contacts...">
+                        </div>
+                    </div>
+
+                    <div class="contacts-table-card">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Contact</th>
+                                        <th>Company</th>
+                                        <th>Email & Phone</th>
+                                        <th>Status</th>
+                                        <th>Deals Associated</th>
+                                        <th>Last Contact</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="contact-cell-avatar">
+                                                <div class="contact-avatar-circle c-blue">SC</div>
+                                                <div>
+                                                    <strong>Sarah Connor</strong>
+                                                    <div class="text-xs" style="color: var(--gray-text);">VP of Engineering</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Tech Corp Global</td>
+                                        <td>
+                                            <div>sarah.c@techcorp.com</div>
+                                            <div class="text-xs" style="color: var(--gray-text);">+1 (555) 234-8901</div>
+                                        </td>
+                                        <td><span class="status badge-green">Customer</span></td>
+                                        <td>2 Active ($62,000)</td>
+                                        <td>Yesterday, 3:45 PM</td>
+                                        <td>
+                                            <div class="action-icons">
+                                                <button class="icon-btn-small" title="Email" onclick="window.location.href='404.html'"><i class="fa-regular fa-envelope"></i></button>
+                                                <button class="icon-btn-small" title="Call" onclick="window.location.href='404.html'"><i class="fa-solid fa-phone"></i></button>
+                                                <button class="icon-btn-small" title="More" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="contact-cell-avatar">
+                                                <div class="contact-avatar-circle c-purple">MR</div>
+                                                <div>
+                                                    <strong>Mike Ross</strong>
+                                                    <div class="text-xs" style="color: var(--gray-text);">Senior Legal Counsel</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Pearson Specter Litt</td>
+                                        <td>
+                                            <div>m.ross@pearsonspecter.com</div>
+                                            <div class="text-xs" style="color: var(--gray-text);">+1 (555) 901-4432</div>
+                                        </td>
+                                        <td><span class="status badge-blue">Lead</span></td>
+                                        <td>1 Active ($5,200)</td>
+                                        <td>Today, 10:15 AM</td>
+                                        <td>
+                                            <div class="action-icons">
+                                                <button class="icon-btn-small" title="Email" onclick="window.location.href='404.html'"><i class="fa-regular fa-envelope"></i></button>
+                                                <button class="icon-btn-small" title="Call" onclick="window.location.href='404.html'"><i class="fa-solid fa-phone"></i></button>
+                                                <button class="icon-btn-small" title="More" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="contact-cell-avatar">
+                                                <div class="contact-avatar-circle c-emerald">HS</div>
+                                                <div>
+                                                    <strong>Harvey Specter</strong>
+                                                    <div class="text-xs" style="color: var(--gray-text);">Managing Partner</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Pearson Specter Litt</td>
+                                        <td>
+                                            <div>harvey@pearsonspecter.com</div>
+                                            <div class="text-xs" style="color: var(--gray-text);">+1 (555) 888-0011</div>
+                                        </td>
+                                        <td><span class="status badge-purple">VIP Partner</span></td>
+                                        <td>3 Active ($120,000)</td>
+                                        <td>3 days ago</td>
+                                        <td>
+                                            <div class="action-icons">
+                                                <button class="icon-btn-small" title="Email" onclick="window.location.href='404.html'"><i class="fa-regular fa-envelope"></i></button>
+                                                <button class="icon-btn-small" title="Call" onclick="window.location.href='404.html'"><i class="fa-solid fa-phone"></i></button>
+                                                <button class="icon-btn-small" title="More" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="contact-cell-avatar">
+                                                <div class="contact-avatar-circle c-amber">RZ</div>
+                                                <div>
+                                                    <strong>Rachel Zane</strong>
+                                                    <div class="text-xs" style="color: var(--gray-text);">Director of Operations</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Zane Law Group</td>
+                                        <td>
+                                            <div>rachel@zanelaw.org</div>
+                                            <div class="text-xs" style="color: var(--gray-text);">+1 (555) 431-7722</div>
+                                        </td>
+                                        <td><span class="status badge-green">Customer</span></td>
+                                        <td>1 Active ($18,500)</td>
+                                        <td>Oct 08, 2026</td>
+                                        <td>
+                                            <div class="action-icons">
+                                                <button class="icon-btn-small" title="Email" onclick="window.location.href='404.html'"><i class="fa-regular fa-envelope"></i></button>
+                                                <button class="icon-btn-small" title="Call" onclick="window.location.href='404.html'"><i class="fa-solid fa-phone"></i></button>
+                                                <button class="icon-btn-small" title="More" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="contact-cell-avatar">
+                                                <div class="contact-avatar-circle c-rose">DP</div>
+                                                <div>
+                                                    <strong>Donna Paulsen</strong>
+                                                    <div class="text-xs" style="color: var(--gray-text);">Chief Operating Officer</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Paulsen Strategy Ltd</td>
+                                        <td>
+                                            <div>donna@paulsenstrat.com</div>
+                                            <div class="text-xs" style="color: var(--gray-text);">+1 (555) 777-3399</div>
+                                        </td>
+                                        <td><span class="status badge-orange">Follow-up</span></td>
+                                        <td>2 Active ($34,000)</td>
+                                        <td>Oct 11, 2026</td>
+                                        <td>
+                                            <div class="action-icons">
+                                                <button class="icon-btn-small" title="Email" onclick="window.location.href='404.html'"><i class="fa-regular fa-envelope"></i></button>
+                                                <button class="icon-btn-small" title="Call" onclick="window.location.href='404.html'"><i class="fa-solid fa-phone"></i></button>
+                                                <button class="icon-btn-small" title="More" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="contact-cell-avatar">
+                                                <div class="contact-avatar-circle c-blue">LL</div>
+                                                <div>
+                                                    <strong>Louis Litt</strong>
+                                                    <div class="text-xs" style="color: var(--gray-text);">Senior Partner & Finance</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>Litt Finance Corp</td>
+                                        <td>
+                                            <div>louis@littfinance.com</div>
+                                            <div class="text-xs" style="color: var(--gray-text);">+1 (555) 123-9988</div>
+                                        </td>
+                                        <td><span class="status badge-green">Customer</span></td>
+                                        <td>1 Active ($28,000)</td>
+                                        <td>Sep 29, 2026</td>
+                                        <td>
+                                            <div class="action-icons">
+                                                <button class="icon-btn-small" title="Email" onclick="window.location.href='404.html'"><i class="fa-regular fa-envelope"></i></button>
+                                                <button class="icon-btn-small" title="Call" onclick="window.location.href='404.html'"><i class="fa-solid fa-phone"></i></button>
+                                                <button class="icon-btn-small" title="More" onclick="window.location.href='404.html'"><i class="fa-solid fa-ellipsis"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. DEALS VIEW -->
+                <section class="dashboard-view" id="view-deals">
+                    <div class="page-header">
+                        <div>
+                            <h1>Deals Pipeline 💼</h1>
+                            <p>Track sales stages, probability rates, and close dates in real-time.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> Create Deal</button>
+                    </div>
+
+                    <div class="view-action-bar">
+                        <div class="filter-pills">
+                            <button class="filter-pill active">All Deals (10)</button>
+                            <button class="filter-pill">High Value &gt; $15k (5)</button>
+                            <button class="filter-pill">Closing This Month (4)</button>
+                        </div>
+                        <div class="view-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Search pipeline...">
+                        </div>
+                    </div>
+
+                    <div class="kanban-board">
+                        <!-- Stage 1: Qualified -->
+                        <div class="kanban-column">
+                            <div class="kanban-header">
+                                <div class="kanban-title">
+                                    <span>Lead Qualified</span>
+                                    <span class="kanban-count">3</span>
+                                </div>
+                                <span class="kanban-total">$42,500</span>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Stripe Technologies</div>
+                                <div class="deal-title">Fintech API Integration</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$18,000</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Oct 28</span>
+                                </div>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Nova Retail Group</div>
+                                <div class="deal-title">Omnichannel POS Sync</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$14,500</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Nov 04</span>
+                                </div>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">CyberLock Security</div>
+                                <div class="deal-title">Endpoint Compliance Audit</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$10,000</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Nov 12</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stage 2: Proposal Sent -->
+                        <div class="kanban-column">
+                            <div class="kanban-header">
+                                <div class="kanban-title">
+                                    <span>Proposal Sent</span>
+                                    <span class="kanban-count">2</span>
+                                </div>
+                                <span class="kanban-total">$24,200</span>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Global Tech Corp</div>
+                                <div class="deal-title">Annual Maintenance Contract</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$5,200</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Oct 15</span>
+                                </div>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Nexus Labs</div>
+                                <div class="deal-title">Cloud Infrastructure Migration</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$19,000</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Oct 22</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stage 3: Negotiation -->
+                        <div class="kanban-column">
+                            <div class="kanban-header">
+                                <div class="kanban-title">
+                                    <span>Negotiation</span>
+                                    <span class="kanban-count">2</span>
+                                </div>
+                                <span class="kanban-total">$37,500</span>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Acme Corporation</div>
+                                <div class="deal-title">Enterprise Software License</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$12,500</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Oct 12</span>
+                                </div>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Apex Holdings</div>
+                                <div class="deal-title">Global ERP Integration</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount">$25,000</span>
+                                    <span class="deal-date"><i class="fa-regular fa-calendar"></i> Oct 19</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Stage 4: Won -->
+                        <div class="kanban-column">
+                            <div class="kanban-header">
+                                <div class="kanban-title">
+                                    <span>Closed Won</span>
+                                    <span class="kanban-count">3</span>
+                                </div>
+                                <span class="kanban-total">$82,000</span>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Stark Industries</div>
+                                <div class="deal-title">Cloud Migration Services</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount" style="color: #10B981;">$45,000</span>
+                                    <span class="deal-date"><i class="fa-solid fa-check"></i> Sep 10</span>
+                                </div>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Cyberdyne Systems</div>
+                                <div class="deal-title">AI Automation Suite</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount" style="color: #10B981;">$29,000</span>
+                                    <span class="deal-date"><i class="fa-solid fa-check"></i> Sep 26</span>
+                                </div>
+                            </div>
+
+                            <div class="deal-card">
+                                <div class="deal-company">Wayne Enterprises</div>
+                                <div class="deal-title">Consulting Retainer Q4</div>
+                                <div class="deal-footer">
+                                    <span class="deal-amount" style="color: #10B981;">$8,000</span>
+                                    <span class="deal-date"><i class="fa-solid fa-check"></i> Sep 18</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. TASKS VIEW -->
+                <section class="dashboard-view" id="view-tasks">
+                    <div class="page-header">
+                        <div>
+                            <h1>Tasks & Action Items ✅</h1>
+                            <p>Prioritize your scheduled calls, follow-ups, and sales deliverables.</p>
+                        </div>
+                        <button class="btn btn-primary" onclick="window.location.href='404.html'"><i class="fa-solid fa-plus"></i> New Task</button>
+                    </div>
+
+                    <div class="view-action-bar">
+                        <div class="filter-pills">
+                            <button class="filter-pill active">All (7)</button>
+                            <button class="filter-pill">Due Today (3)</button>
+                            <button class="filter-pill">High Priority (2)</button>
+                            <button class="filter-pill">Completed (2)</button>
+                        </div>
+                        <div class="view-search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <input type="text" placeholder="Filter tasks...">
+                        </div>
+                    </div>
+
+                    <div class="tasks-container">
+                        <div class="task-item">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Call Sarah Connor regarding enterprise contract terms</h4>
+                                <p><i class="fa-regular fa-clock"></i> Today, 2:00 PM &bull; Tech Corp Global &bull; Assigned to you</p>
+                            </div>
+                            <span class="priority-tag high">High</span>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Send revised pricing sheet to Acme Corp procurement</h4>
+                                <p><i class="fa-regular fa-clock"></i> Today, 4:30 PM &bull; Acme Corp &bull; Assigned to you</p>
+                            </div>
+                            <span class="priority-tag high">High</span>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Follow up on product demo feedback with Mike Ross</h4>
+                                <p><i class="fa-regular fa-clock"></i> Tomorrow, 11:00 AM &bull; Pearson Specter Litt</p>
+                            </div>
+                            <span class="priority-tag medium">Medium</span>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Prepare Q4 sales projection deck for executive sync</h4>
+                                <p><i class="fa-regular fa-calendar"></i> Oct 18, 2026 &bull; Internal Strategy</p>
+                            </div>
+                            <span class="priority-tag medium">Medium</span>
+                        </div>
+
+                        <div class="task-item">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Update CRM records for Stark Industries account expansion</h4>
+                                <p><i class="fa-regular fa-calendar"></i> Oct 20, 2026 &bull; Stark Industries</p>
+                            </div>
+                            <span class="priority-tag low">Low</span>
+                        </div>
+
+                        <div class="task-item completed">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Conduct inbound lead qualification review with SDR team</h4>
+                                <p><i class="fa-solid fa-check"></i> Completed Yesterday at 3:15 PM</p>
+                            </div>
+                            <span class="priority-tag low">Low</span>
+                        </div>
+
+                        <div class="task-item completed">
+                            <div class="task-check-btn"><i class="fa-solid fa-check" style="font-size: 11px;"></i></div>
+                            <div class="task-text">
+                                <h4>Deliver onboarding kit and license keys to Nexus Labs</h4>
+                                <p><i class="fa-solid fa-check"></i> Completed Oct 09, 2026</p>
+                            </div>
+                            <span class="priority-tag medium">Medium</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5. REPORTS VIEW -->
+                <section class="dashboard-view" id="view-reports">
+                    <div class="page-header">
+                        <div>
+                            <h1>Performance Analytics & Reports 📊</h1>
+                            <p>Comprehensive insights on deal velocity, revenue conversion, and team efficiency.</p>
+                        </div>
+                        <div style="display: flex; gap: 10px;">
+                            <select class="small-select"><option>Q4 - 2026</option><option>Q3 - 2026</option><option>Full Year 2026</option></select>
+                            <button class="btn btn-primary" onclick="window.location.href='404.html'"><i class="fa-solid fa-file-arrow-down"></i> Export Report</button>
+                        </div>
+                    </div>
+
+                    <div class="reports-kpi-grid">
+                        <div class="report-card">
+                            <div class="report-card-header">
+                                <h4>Pipeline Conversion</h4>
+                                <span class="trend up"><i class="fa-solid fa-arrow-up"></i> +5.2%</span>
+                            </div>
+                            <div style="font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: var(--dark-bg);">68.4%</div>
+                            <div class="chart-bar-horizontal">
+                                <div class="bar-row">
+                                    <span class="bar-label">Lead &rarr; Demo</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 84%;"></div></div>
+                                    <span class="bar-val">84%</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-label">Demo &rarr; Proposal</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 62%;"></div></div>
+                                    <span class="bar-val">62%</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-label">Proposal &rarr; Won</span>
+                                    <div class="bar-track"><div class="bar-fill green" style="width: 71%;"></div></div>
+                                    <span class="bar-val">71%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="report-card">
+                            <div class="report-card-header">
+                                <h4>Revenue by Tier</h4>
+                                <span class="trend up"><i class="fa-solid fa-arrow-up"></i> +14.8%</span>
+                            </div>
+                            <div style="font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: var(--dark-bg);">$142,800</div>
+                            <div class="chart-bar-horizontal">
+                                <div class="bar-row">
+                                    <span class="bar-label">Enterprise</span>
+                                    <div class="bar-track"><div class="bar-fill" style="width: 65%;"></div></div>
+                                    <span class="bar-val">$92k</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-label">Professional</span>
+                                    <div class="bar-track"><div class="bar-fill orange" style="width: 25%;"></div></div>
+                                    <span class="bar-val">$36k</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-label">Starter / Add-ons</span>
+                                    <div class="bar-track"><div class="bar-fill green" style="width: 10%;"></div></div>
+                                    <span class="bar-val">$14.8k</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="report-card">
+                            <div class="report-card-header">
+                                <h4>Quota Attainment</h4>
+                                <span class="trend up"><i class="fa-solid fa-arrow-up"></i> On Track</span>
+                            </div>
+                            <div style="font-size: 2rem; font-weight: 800; margin-bottom: 16px; color: #10B981;">114.2%</div>
+                            <div class="chart-bar-horizontal">
+                                <div class="bar-row">
+                                    <span class="bar-label">James Wilson</span>
+                                    <div class="bar-track"><div class="bar-fill green" style="width: 95%;"></div></div>
+                                    <span class="bar-val">124%</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-label">Sarah Connor</span>
+                                    <div class="bar-track"><div class="bar-fill green" style="width: 85%;"></div></div>
+                                    <span class="bar-val">110%</span>
+                                </div>
+                                <div class="bar-row">
+                                    <span class="bar-label">Harvey Specter</span>
+                                    <div class="bar-track"><div class="bar-fill green" style="width: 82%;"></div></div>
+                                    <span class="bar-val">108%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Recent Contacts -->
-                    <div class="card contacts-card">
+                    <div class="card">
                         <div class="card-header">
-                            <h4>Recent Contacts</h4>
-                            <a href="#" class="view-all">View All</a>
+                            <h4>Quarterly Revenue Velocity</h4>
+                            <span style="font-size: 0.85rem; color: var(--gray-text);">Average sales cycle: <strong>18.4 days</strong> (Industry benchmark: 26 days)</span>
                         </div>
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <img src="https://i.pravatar.cc/150?img=1" alt="Avatar">
-                                <div class="contact-text">
-                                    <h5>Sarah Connor</h5>
-                                    <p>Tech Corp</p>
-                                </div>
-                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
-                            </div>
-                            <div class="contact-item">
-                                <img src="https://i.pravatar.cc/150?img=2" alt="Avatar">
-                                <div class="contact-text">
-                                    <h5>Mike Ross</h5>
-                                    <p>Pearson Specter</p>
-                                </div>
-                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
-                            </div>
-                            <div class="contact-item">
-                                <img src="https://i.pravatar.cc/150?img=3" alt="Avatar">
-                                <div class="contact-text">
-                                    <h5>Harvey Specter</h5>
-                                    <p>Pearson Specter</p>
-                                </div>
-                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
-                            </div>
-                            <div class="contact-item">
-                                <img src="https://i.pravatar.cc/150?img=4" alt="Avatar">
-                                <div class="contact-text">
-                                    <h5>Rachel Zane</h5>
-                                    <p>Zane Law</p>
-                                </div>
-                                <a href="#" class="icon-btn-small"><i class="fa-regular fa-envelope"></i></a>
-                            </div>
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Sales Region</th>
+                                        <th>Deals Closed</th>
+                                        <th>Total Volume</th>
+                                        <th>Avg Deal Size</th>
+                                        <th>Cycle Time</th>
+                                        <th>Performance</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>North America Enterprise</strong></td>
+                                        <td>18</td>
+                                        <td>$82,400</td>
+                                        <td>$4,577</td>
+                                        <td>14 days</td>
+                                        <td><span class="status badge-green">Exceeded</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>EMEA Strategic Accounts</strong></td>
+                                        <td>12</td>
+                                        <td>$41,200</td>
+                                        <td>$3,433</td>
+                                        <td>19 days</td>
+                                        <td><span class="status badge-blue">Target Met</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>APAC Emerging Markets</strong></td>
+                                        <td>8</td>
+                                        <td>$19,200</td>
+                                        <td>$2,400</td>
+                                        <td>22 days</td>
+                                        <td><span class="status badge-orange">In Progress</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <!-- Data Table -->
-                <div class="card table-card">
-                    <div class="card-header">
-                        <h4>Active Deals</h4>
+                <!-- 6. SETTINGS VIEW -->
+                <section class="dashboard-view" id="view-settings">
+                    <div class="page-header">
+                        <div>
+                            <h1>Account & Workspace Settings ⚙️</h1>
+                            <p>Manage your account credentials, preferences, and workspace configurations.</p>
+                        </div>
+                        <button class="btn btn-primary btn-save-settings"><i class="fa-solid fa-floppy-disk"></i> Save Changes</button>
                     </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Deal Name</th>
-                                    <th>Company</th>
-                                    <th>Amount</th>
-                                    <th>Stage</th>
-                                    <th>Closing Date</th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><strong>Enterprise Software License</strong></td>
-                                    <td>Acme Corp</td>
-                                    <td>$12,500</td>
-                                    <td><span class="status badge-blue">Negotiation</span></td>
-                                    <td>Oct 12, 2026</td>
-                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Annual Maintenance Contract</strong></td>
-                                    <td>Global Tech</td>
-                                    <td>$5,200</td>
-                                    <td><span class="status badge-orange">Proposal</span></td>
-                                    <td>Oct 15, 2026</td>
-                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Cloud Migration Services</strong></td>
-                                    <td>Stark Industries</td>
-                                    <td>$45,000</td>
-                                    <td><span class="status badge-green">Won</span></td>
-                                    <td>Sep 10, 2026</td>
-                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Consulting Retainer</strong></td>
-                                    <td>Wayne Enterprises</td>
-                                    <td>$8,000</td>
-                                    <td><span class="status badge-blue">In Progress</span></td>
-                                    <td>Oct 20, 2026</td>
-                                    <td><button class="icon-btn-small"><i class="fa-solid fa-ellipsis"></i></button></td>
-                                </tr>
-                            </tbody>
-                        </table>
+
+                    <div class="settings-grid-layout">
+                        <div>
+                            <!-- Box 1: Profile Information -->
+                            <div class="settings-box">
+                                <h3>Personal Information</h3>
+                                <p class="settings-desc">Update your profile info and email communication preferences.</p>
+                                <div class="settings-form-row">
+                                    <div class="form-field">
+                                        <label>First Name</label>
+                                        <input type="text" value="James" id="settingsFirstName">
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Last Name</label>
+                                        <input type="text" value="Wilson" id="settingsLastName">
+                                    </div>
+                                </div>
+                                <div class="settings-form-row">
+                                    <div class="form-field">
+                                        <label>Email Address</label>
+                                        <input type="email" value="james.wilson@stackly.com" id="settingsEmail">
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Job Title</label>
+                                        <input type="text" value="Senior Sales Account Executive">
+                                    </div>
+                                </div>
+                                <div class="settings-form-row">
+                                    <div class="form-field">
+                                        <label>Phone Number</label>
+                                        <input type="text" value="+1 (555) 349-8821">
+                                    </div>
+                                    <div class="form-field">
+                                        <label>Timezone</label>
+                                        <select>
+                                            <option selected>Eastern Time (US & Canada) (UTC-05:00)</option>
+                                            <option>Pacific Time (US & Canada) (UTC-08:00)</option>
+                                            <option>London, GMT (UTC+00:00)</option>
+                                            <option>India Standard Time (UTC+05:30)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Box 2: Notification Preferences -->
+                            <div class="settings-box">
+                                <h3>Notifications & Alerts</h3>
+                                <p class="settings-desc">Choose how and when Stackly sends you updates.</p>
+                                <div class="toggle-row">
+                                    <div class="toggle-info">
+                                        <h5>Deal Stage Transitions</h5>
+                                        <p>Receive real-time alerts when deals change pipeline stages</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <div class="toggle-info">
+                                        <h5>Task Reminders & Due Dates</h5>
+                                        <p>Get notified 30 minutes before high priority tasks are due</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <div class="toggle-info">
+                                        <h5>Weekly Sales Summary</h5>
+                                        <p>Receive weekly digest of closed revenue and KPI metrics every Monday</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox" checked>
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                                <div class="toggle-row">
+                                    <div class="toggle-info">
+                                        <h5>Browser Push Notifications</h5>
+                                        <p>Allow desktop notifications when new leads submit inquiry forms</p>
+                                    </div>
+                                    <label class="switch">
+                                        <input type="checkbox">
+                                        <span class="slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <!-- Box 3: Workspace & Security -->
+                            <div class="settings-box">
+                                <h3>Workspace Info</h3>
+                                <p class="settings-desc">Active organization workspace.</p>
+                                <div class="form-field" style="margin-bottom: 14px;">
+                                    <label>Workspace Domain</label>
+                                    <input type="text" value="stackly-sales.stackly.io" disabled style="background: #F8FAFC; color: #64748B;">
+                                </div>
+                                <div class="form-field" style="margin-bottom: 14px;">
+                                    <label>Currency Format</label>
+                                    <select>
+                                        <option selected>USD ($) - US Dollar</option>
+                                        <option>EUR (€) - Euro</option>
+                                        <option>GBP (£) - British Pound</option>
+                                        <option>INR (₹) - Indian Rupee</option>
+                                    </select>
+                                </div>
+                                <div class="form-field" style="margin-bottom: 16px;">
+                                    <label>Default Pipeline View</label>
+                                    <select>
+                                        <option selected>Kanban Board</option>
+                                        <option>Tabular List</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-primary btn-save-settings" style="width: 100%;"><i class="fa-solid fa-check"></i> Save Preferences</button>
+                            </div>
+
+                            <!-- Box 4: Security Actions -->
+                            <div class="settings-box">
+                                <h3>Security</h3>
+                                <p class="settings-desc">Authentication and password control.</p>
+                                <div style="display: flex; flex-direction: column; gap: 10px;">
+                                    <button class="btn" style="background: #F1F5F9; color: var(--dark-bg); width: 100%; justify-content: center; font-size: 0.85rem;" onclick="window.location.href='404.html'"><i class="fa-solid fa-key"></i> Change Password</button>
+                                    <button class="btn" style="background: #F1F5F9; color: var(--dark-bg); width: 100%; justify-content: center; font-size: 0.85rem;" onclick="window.location.href='404.html'"><i class="fa-solid fa-shield-halved"></i> Manage 2FA</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
 
             </main>
         </div>
     </div>
+
+    <!-- Sidebar Overlay for Mobile -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Notification Toast -->
+    <div class="toast-msg" id="settingsToast">
+        <i class="fa-solid fa-circle-check" style="color: #10B981; font-size: 1.1rem;"></i>
+        <span>Settings updated successfully!</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="JS/dashboard.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>

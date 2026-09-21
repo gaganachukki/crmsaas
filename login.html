@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="CSS/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -28,7 +29,7 @@
                 <div class="dash-mockup">
                     <div class="dash-sidebar">
                         <div class="dash-logo">
-                            <i class="fa-solid fa-layer-group" style="color:var(--primary-blue);"></i> Stackly
+                            <img src="assets/logo.webp" alt="Stackly" class="brand-logo">
                         </div>
                         <ul class="dash-nav">
                             <li class="active"><i class="fa-solid fa-house"></i> Dashboard</li>
@@ -100,7 +101,7 @@
 
                 <!-- Floating Image -->
                 <div class="float-image">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop" alt="Workspace">
+                    <img src="assets/auth-workspace.webp" alt="Workspace">
                     <div class="blue-accent-shape"></div>
                 </div>
             </div>
@@ -119,12 +120,23 @@
                 <p class="subtitle">Discover a better way of spendings with Stackly.</p>
 
                 <button class="btn-google">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" alt="Google">
+                    <img src="assets/google-logo.webp" alt="Google">
                     Log in with Google
                 </button>
 
                 <div class="divider">
                     <span>Or</span>
+                </div>
+
+                <div class="role-selector">
+                    <button type="button" class="role-btn active" id="userRoleBtn">
+                        <i class="fa-solid fa-user"></i>
+                        <span>User</span>
+                    </button>
+                    <button type="button" class="role-btn" id="adminRoleBtn">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Admin</span>
+                    </button>
                 </div>
 
                 <form class="auth-form">
@@ -141,10 +153,10 @@
                         <label class="remember-me">
                             <input type="checkbox"> Remember Me
                         </label>
-                        <a href="#" class="forgot-pwd">Forget Password?</a>
+                        <a href="404.html" class="forgot-pwd">Forget Password?</a>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-full">Log in</button>
+                    <button type="submit" class="btn btn-primary btn-full">Log in as User</button>
                 </form>
 
                 <p class="auth-footer">
@@ -154,5 +166,10 @@
         </div>
 
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="JS/auth.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>

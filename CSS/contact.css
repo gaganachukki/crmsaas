@@ -2,16 +2,33 @@
 
 /* Contact Hero */
 .contact-hero {
-    padding: 80px 24px;
+    padding: 40px 24px 80px;
+}
+.contact-hero-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+.contact-hero-badge {
+    display: inline-block;
+    padding: 8px 22px;
+    background: rgba(30, 101, 255, 0.08);
+    color: var(--primary-blue);
+    border-radius: 100px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+.contact-hero-split {
     align-items: flex-start;
 }
 .contact-heading h1 {
-    font-size: 4.5rem;
+    font-size: clamp(2.2rem, 5.5vw, 4.5rem);
     line-height: 1.1;
     margin: 0;
 }
 .contact-form-wrapper {
     padding: 40px;
+    box-sizing: border-box;
 }
 .contact-form .form-group {
     margin-bottom: 24px;
@@ -173,12 +190,133 @@
 .three-cols .link-col ul li a { color: var(--dark-bg); font-weight: 600; }
 .three-cols .link-col ul li a:hover { color: var(--primary-blue); }
 
+/* Google Map Section */
+.contact-map-section {
+    padding: 20px 24px 80px;
+    scroll-margin-top: 100px;
+}
+.map-header {
+    margin-bottom: 32px;
+}
+.map-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(30, 101, 255, 0.08);
+    color: var(--primary-blue);
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+.map-header h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 12px;
+}
+.map-header p {
+    color: var(--gray-text);
+    font-size: 1.05rem;
+    margin: 0;
+    max-width: 600px;
+}
+.map-card {
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 420px;
+    background: var(--light-bg);
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+.map-info-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.map-info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.map-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(30, 101, 255, 0.1);
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.map-info-item h5 {
+    font-size: 0.82rem;
+    color: var(--gray-text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.map-info-item p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-bg);
+    margin: 0;
+}
+.map-directions-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 0.95rem;
+}
+
 /* Responsive */
 @media (max-width: 992px) {
-    .contact-hero { flex-direction: column; }
-    .contact-heading h1 { font-size: 3.5rem; margin-bottom: 40px;}
+    .contact-hero-split { flex-direction: column; }
+    .contact-heading h1 { margin-bottom: 40px;}
     .contact-form-wrapper { width: 100%; }
     .info-grid { grid-template-columns: 1fr; }
     .split-footer { flex-direction: column; }
     .three-cols { flex-wrap: wrap; gap: 40px; }
 }
+
+@media (max-width: 768px) {
+    .contact-hero { padding: 32px 16px 40px; }
+    .contact-hero-header { margin-bottom: 28px; }
+    .contact-form-wrapper { padding: 24px 16px; border-radius: 16px; }
+    .contact-info-section { padding: 40px 16px 60px; }
+    .contact-map-section { padding: 0 16px 60px; }
+    .map-card { border-radius: 18px; }
+    .map-container { height: 320px; }
+    .map-info-bar {
+        padding: 20px 16px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+    }
+    .map-info-item:last-child { width: 100%; }
+    .map-directions-btn { width: 100%; justify-content: center; }
+    .contact-faq { padding: 40px 16px 60px; }
+    .cta-guarantees { flex-wrap: wrap; gap: 16px; justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    .map-container { height: 260px; }
+}
+

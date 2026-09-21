@@ -2,11 +2,13 @@
 
 .page-404 {
     background-color: var(--white);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    overflow-y: auto;
+    padding: 24px 0;
+    box-sizing: border-box;
 }
 
 .error-wrapper {
@@ -27,18 +29,19 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 24px;
+    flex-wrap: wrap;
 }
 
 .error-code {
-    font-size: 10rem;
+    font-size: clamp(5rem, 15vw, 10rem);
     font-weight: 800;
     line-height: 1;
     color: var(--dark-bg);
-    letter-spacing: -5px;
+    letter-spacing: -3px;
 }
 
 .error-illustration {
-    width: 250px;
+    width: clamp(160px, 25vw, 250px);
     height: auto;
     margin-left: -20px; /* Slight overlap as per design */
 }

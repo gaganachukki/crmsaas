@@ -11,7 +11,7 @@
     margin-bottom: 60px;
 }
 .pricing-title {
-    font-size: 3.5rem;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     margin: 0;
     line-height: 1.1;
 }
@@ -22,10 +22,13 @@
 }
 .table-container {
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
     margin-top: 40px;
+    border-radius: 12px;
 }
 .compare-table {
     width: 100%;
+    min-width: 620px;
     border-collapse: collapse;
     text-align: center;
 }
@@ -99,3 +102,52 @@
         gap: 32px;
     }
 }
+
+@media (max-width: 768px) {
+    .pricing-hero {
+        padding: 40px 16px 24px;
+    }
+    .pricing-header-split {
+        margin-bottom: 36px;
+    }
+    .compare-plans {
+        padding: 40px 16px 60px;
+    }
+    .compare-table th, .compare-table td {
+        padding: 14px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .billing-toggle {
+        font-size: 0.85rem;
+        gap: 10px;
+    }
+}
+
+/* Pricing FAQ Accordion Active Visibility */
+.faq-list .accordion-header h4,
+.faq-list .accordion-header span {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: #111827;
+    transition: color 0.25s ease;
+}
+.faq-list .accordion-header > i {
+    color: #111827;
+    font-size: 1rem;
+    transition: color 0.25s ease;
+}
+.faq-list .accordion-item.active .accordion-header {
+    background-color: #000000;
+}
+.faq-list .accordion-item.active .accordion-header h4,
+.faq-list .accordion-item.active .accordion-header span {
+    color: #FFFFFF !important;
+}
+.faq-list .accordion-item.active .accordion-header > i {
+    color: #FFFFFF !important;
+}
+
+

@@ -1,0 +1,221 @@
+/* ==========================================================================
+   Stackly CRM - Global Animation Stylesheet (GSAP, Scroll & Slide Effects)
+   ========================================================================== */
+
+/* 1. GPU Acceleration & Base Animation Attributes */
+.gsap-reveal,
+.gsap-slide-up,
+.gsap-slide-left,
+.gsap-slide-right,
+.gsap-scale-in,
+.gsap-stagger-item {
+    will-change: transform, opacity;
+}
+
+/* 2. Micro-interactions: Hover Lift & Magnetic Transitions */
+.card,
+.stat-card,
+.feature-card,
+.pricing-card,
+.blog-card,
+.team-card,
+.testimonial-card,
+.value-card,
+.contacts-table-card,
+.kanban-column,
+.deal-card,
+.task-item,
+.report-card,
+.settings-box {
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.28s ease !important;
+}
+
+.feature-card:hover,
+.pricing-card:hover,
+.blog-card:hover,
+.team-card:hover,
+.value-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+}
+
+.deal-card:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+}
+
+/* Button Micro-interactions */
+.btn {
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 8px 20px rgba(30, 101, 255, 0.28);
+}
+
+.btn-dark:hover {
+    box-shadow: 0 8px 20px rgba(15, 17, 21, 0.24);
+}
+
+/* Button Shimmer Effect on CTA */
+.btn-shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 40%;
+    height: 200%;
+    background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(25deg);
+    transition: all 0.75s ease;
+}
+
+.btn-shimmer:hover::after {
+    left: 130%;
+}
+
+/* 3. Floating Keyframes for Illustrations and Badges */
+@keyframes floatSlow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes floatSlowReverse {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        box-shadow: 0 0 0 0 rgba(30, 101, 255, 0.2);
+    }
+    50% {
+        box-shadow: 0 0 0 12px rgba(30, 101, 255, 0);
+    }
+}
+
+.floating-element {
+    animation: floatSlow 5s ease-in-out infinite;
+}
+
+.floating-element-reverse {
+    animation: floatSlowReverse 6s ease-in-out infinite;
+}
+
+.error-illustration {
+    animation: floatSlow 4s ease-in-out infinite;
+}
+
+/* 4. Navbar Sticky / Scroll Backdrop Effect */
+.navbar {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* 5. Fallback Reveal Classes (If JS is slow/offline) */
+.js-fallback .gsap-reveal,
+.js-fallback .gsap-slide-up,
+.js-fallback .gsap-slide-left,
+.js-fallback .gsap-slide-right,
+.js-fallback .gsap-scale-in {
+    opacity: 0;
+    transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.js-fallback .gsap-slide-up { transform: translateY(30px); }
+.js-fallback .gsap-slide-left { transform: translateX(-40px); }
+.js-fallback .gsap-slide-right { transform: translateX(40px); }
+.js-fallback .gsap-scale-in { transform: scale(0.92); }
+
+.js-fallback .revealed {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* 6. Accessibility: Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .floating-element,
+    .floating-element-reverse,
+    .error-illustration,
+    .typewriter-cursor {
+        animation: none !important;
+    }
+}
+
+/* 7. Typewriter Hero Animation */
+.typewriter-hero {
+    position: relative;
+    max-width: 100%;
+}
+
+.typewriter-content {
+    display: inline;
+}
+
+.typewriter-cursor {
+    display: inline-block;
+    color: var(--primary-blue, #1E65FF);
+    font-weight: 300;
+    margin-left: 3px;
+    user-select: none;
+    line-height: 1;
+    animation: typewriterCursorBlink 0.8s infinite;
+    vertical-align: baseline;
+}
+
+.typewriter-cursor.typing {
+    animation: none;
+    opacity: 1;
+}
+
+@keyframes typewriterCursorBlink {
+    0%, 45% {
+        opacity: 1;
+    }
+    50%, 95% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+

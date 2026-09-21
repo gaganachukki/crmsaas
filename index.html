@@ -8,60 +8,62 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar container">
-        <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-            </svg>
-            <span>STACKLY</span>
-        </div>
-        <ul class="nav-links">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.webp" alt="Stackly" class="brand-logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html" class="active">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
+            <li class="mobile-login-item"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a></li>
         </ul>
-        <div class="nav-actions" style="display: flex; gap: 24px; align-items: center;">
-            <a href="login.html" style="font-weight: 500;">Login</a>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">Login</a>
             <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <header class="hero container">
         <div class="hero-content">
-            <h1>Boost growth with advanced<br>AI management CRM.</h1>
+            <h1 class="typewriter-hero">Boost growth with advanced<br>AI management CRM.</h1>
             <p>Empower your team with a complete set of tools that help you manage sales, automate tasks, and grow faster.</p>
-            <a href="#" class="btn btn-dark">Get Started Now</a>
+            <a href="signup.html" class="btn btn-dark">Get Orbit For 14 Days Free Trial</a>
             
             <!-- Dummy Logos -->
             <div class="client-logos">
-                <img src="https://via.placeholder.com/80x30?text=Intercom" alt="Intercom">
-                <img src="https://via.placeholder.com/80x30?text=Zapier" alt="Zapier">
-                <img src="https://via.placeholder.com/80x30?text=Dropbox" alt="Dropbox">
-                <img src="https://via.placeholder.com/80x30?text=Spotify" alt="Spotify">
-                <img src="https://via.placeholder.com/80x30?text=Slack" alt="Slack">
+                <img src="assets/logo-intercom.webp" alt="Intercom">
+                <img src="assets/logo-zapier.webp" alt="Zapier">
+                <img src="assets/logo-dropbox.webp" alt="Dropbox">
+                <img src="assets/logo-spotify.webp" alt="Spotify">
+                <img src="assets/logo-slack.webp" alt="Slack">
             </div>
         </div>
 
         <div class="hero-visuals">
             <div class="visual-box visual-box-1">
-                <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?q=80&w=600&auto=format&fit=crop" alt="Team meeting">
-                <div class="floating-card bottom-left">
+                <img src="assets/index-team-meeting.webp" alt="Team meeting">
+                <div class="floating-card bottom-left floating-element">
                     <div class="small-text">Total Profit</div>
                     <div class="big-text">$24K</div>
                     <div class="progress-bar"><div class="fill"></div></div>
                 </div>
             </div>
             <div class="visual-box visual-box-2">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=600&auto=format&fit=crop" alt="Working">
-                <div class="floating-card top-right">
+                <img src="assets/index-working.webp" alt="Working">
+                <div class="floating-card top-right floating-element-reverse">
                     <div class="small-text">New Clients</div>
                     <div class="users-stack">
                         <div class="circle c1"></div><div class="circle c2"></div><div class="circle c3"></div>
@@ -90,98 +92,270 @@
         </div>
     </section>
 
-    <!-- Feature 1 -->
+    <!-- Feature 1: Revenue Bar Chart (Figma Design) -->
     <section class="feature-section container split">
         <div class="content">
             <h2>Optimize work processes efficiently.</h2>
             <p>Discover how our tools help streamline your team's workflow and remove bottlenecks from day one, allowing you to focus on closing deals.</p>
-            <a href="#" class="btn btn-dark">Learn More</a>
+            <a href="about.html" class="btn btn-dark">Learn More</a>
         </div>
         <div class="visual bg-light">
-            <div class="mockup bar-chart-mockup">
-                <div class="mock-header"><span>Sales</span></div>
-                <div class="bars">
-                    <div class="bar" style="height: 30%"></div>
-                    <div class="bar" style="height: 50%"></div>
-                    <div class="bar" style="height: 40%"></div>
-                    <div class="bar active" style="height: 80%"></div>
-                    <div class="bar" style="height: 60%"></div>
+            <div class="feature-card-mockup revenue-card-mockup">
+                <div class="chart-card-header">
+                    <h3 class="chart-card-title">Revenue</h3>
+                    <div class="chart-dropdown-pill">
+                        <span>Weekly</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+
+                <div class="revenue-chart-body">
+                    <!-- Left Y-Axis labels (200, 150, 100, 50, 0) -->
+                    <div class="chart-y-axis">
+                        <span>200</span>
+                        <span>150</span>
+                        <span>100</span>
+                        <span>50</span>
+                        <span>0</span>
+                    </div>
+
+                    <!-- Chart Grid & Bars -->
+                    <div class="chart-plot-area">
+                        <div class="chart-gridlines">
+                            <div class="chart-gridline"></div>
+                            <div class="chart-gridline"></div>
+                            <div class="chart-gridline"></div>
+                            <div class="chart-gridline"></div>
+                            <div class="chart-gridline"></div>
+                        </div>
+
+                        <div class="revenue-bars-container">
+                            <div class="revenue-bar-col">
+                                <div class="revenue-bar-pill bar-mon" style="height: 32%;"></div>
+                            </div>
+                            <div class="revenue-bar-col">
+                                <div class="revenue-bar-pill bar-tue" style="height: 62%;"></div>
+                            </div>
+                            <div class="revenue-bar-col">
+                                <div class="revenue-bar-pill bar-wed" style="height: 46%;"></div>
+                            </div>
+                            <div class="revenue-bar-col">
+                                <div class="revenue-bar-pill bar-thu active" style="height: 84%;"></div>
+                            </div>
+                            <div class="revenue-bar-col">
+                                <div class="revenue-bar-pill bar-fri" style="height: 56%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- X-Axis Days Row -->
+                <div class="chart-x-axis">
+                    <span class="chart-axis-spacer"></span>
+                    <div class="chart-x-labels">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature 2 -->
-    <section class="feature-section blue-bg">
-        <div class="container split">
-            <div class="content">
-                <h2 class="text-white">Scaling growth for your business strategies.</h2>
-                <p class="text-white-light">Empower your sales and marketing teams to scale up outreach without compromising personalization and conversion rates.</p>
-                <a href="#" class="btn btn-dark">Learn More</a>
+    <!-- Feature 2: Boosting Sales Performance (Figma Design) -->
+    <section class="feature-blue-section container">
+        <div class="blue-card-container split">
+            <div class="blue-card-content">
+                <h2 class="blue-card-title">Boosting your sales<br>performance by region.</h2>
+                <p class="blue-card-desc">Optimizing your team with progress tracking tools is essential for the maintaining productivity and ensuring project success. Tools like Mintly provide visual indicators.</p>
+                <a href="signup.html" class="btn-pill-dark">Get Orbit For Free</a>
             </div>
-            <div class="visual">
-                <div class="mockup pie-chart-mockup">
-                    <div class="mock-card card-1">
-                        <h4>Conversion</h4>
-                        <div class="circle-chart"></div>
+            <div class="blue-card-visual">
+                <div class="stacked-cards-container">
+                    <!-- Weekly Tasks Card (Back / Tilted Left) -->
+                    <div class="stacked-card card-weekly-tasks">
+                        <div class="task-card-header">
+                            <h4>Weekly tasks</h4>
+                        </div>
+                        <div class="task-metric-block">
+                            <div class="task-metric-val"><span class="blue-stat-70">70</span>%</div>
+                            <div class="task-metric-label">Task completed</div>
+                        </div>
+                        <div class="task-status-pill">
+                            <span class="status-emoji">😍</span>
+                            <span class="status-text">Your work balance th...</span>
+                        </div>
+                        <div class="meet-user-row">
+                            <img src="assets/avatar-1.webp" alt="Wade Warren" class="user-avatar">
+                            <div class="user-meta">
+                                <span class="user-name">Wade Warren</span>
+                                <span class="user-sub">New Google Meet</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="mock-card card-2">
-                        <h4>Traffic</h4>
-                        <div class="circle-chart mini"></div>
+
+                    <!-- Top Customers Card (Front / Tilted Right) -->
+                    <div class="stacked-card card-top-customers">
+                        <div class="customer-card-header">
+                            <h4>Top customers</h4>
+                            <span class="header-dots"><i class="fa-solid fa-ellipsis"></i></span>
+                        </div>
+                        <div class="donut-chart-container">
+                            <svg class="concentric-rings" viewBox="0 0 220 220" width="190" height="190">
+                                <!-- Background tracks -->
+                                <circle cx="110" cy="110" r="85" fill="none" stroke="#F1F5F9" stroke-width="11" />
+                                <circle cx="110" cy="110" r="67" fill="none" stroke="#F1F5F9" stroke-width="11" />
+                                <circle cx="110" cy="110" r="49" fill="none" stroke="#F1F5F9" stroke-width="11" />
+
+                                <!-- Outer Green Ring (E-commerce): r=85, circ=534.1 -->
+                                <circle class="ring-track ring-green" cx="110" cy="110" r="85" fill="none"
+                                    stroke="#10B981" stroke-width="11" stroke-linecap="round"
+                                    stroke-dasharray="374 534" stroke-dashoffset="0"
+                                    transform="rotate(-90 110 110)" />
+
+                                <!-- Middle Blue Ring (Web): r=67, circ=421.0 -->
+                                <circle class="ring-track ring-blue" cx="110" cy="110" r="67" fill="none"
+                                    stroke="#1E65FF" stroke-width="11" stroke-linecap="round"
+                                    stroke-dasharray="261 421" stroke-dashoffset="0"
+                                    transform="rotate(-90 110 110)" />
+
+                                <!-- Inner Orange Ring (Social app): r=49, circ=307.9 -->
+                                <circle class="ring-track ring-orange" cx="110" cy="110" r="49" fill="none"
+                                    stroke="#F59E0B" stroke-width="11" stroke-linecap="round"
+                                    stroke-dasharray="163 308" stroke-dashoffset="0"
+                                    transform="rotate(-90 110 110)" />
+                            </svg>
+                            <div class="donut-center-text">
+                                <span class="donut-center-num"><span class="blue-stat-630">630</span>k</span>
+                            </div>
+                        </div>
+                        <div class="customer-legend">
+                            <div class="legend-item">
+                                <span class="legend-dot dot-orange"></span>
+                                <span>Social app</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot dot-blue"></span>
+                                <span>Web</span>
+                            </div>
+                            <div class="legend-item">
+                                <span class="legend-dot dot-green"></span>
+                                <span>E-commerce</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Feature 3 -->
-    <section class="feature-section container split reverse">
+    <!-- Feature 3: Visitor Online Wave Graph (Figma Design) -->
+    <section class="feature-section container split">
         <div class="visual bg-light">
-             <div class="mockup line-chart-mockup">
-                 <div class="mock-header"><span>Analytics</span> <div class="sun-icon"></div></div>
-                 <svg viewBox="0 0 200 100" class="line-graph">
-                    <path d="M0,80 L40,40 L80,60 L120,20 L160,50 L200,10" fill="none" stroke="#1E65FF" stroke-width="2"/>
-                    <circle cx="120" cy="20" r="4" fill="#F59E0B" />
-                 </svg>
-             </div>
+            <div class="feature-card-mockup visitor-card-mockup">
+                <div class="chart-card-header">
+                    <h3 class="chart-card-title">Visitor online</h3>
+                    <button class="chart-view-badge" type="button" onclick="window.location.href='404.html'">View</button>
+                </div>
+
+                <div class="visitor-chart-body">
+                    <!-- Left Y-Axis labels (100, 100, 100, 50, 0 as in Figma) -->
+                    <div class="chart-y-axis">
+                        <span>100</span>
+                        <span>100</span>
+                        <span>100</span>
+                        <span>50</span>
+                        <span>0</span>
+                    </div>
+
+                    <!-- Line Plot Area -->
+                    <div class="visitor-plot-area">
+                        <!-- Orange floating tooltip badge -->
+                        <div class="chart-tooltip-orange">112K</div>
+
+                        <!-- SVG Curve & Fill Area -->
+                        <svg class="visitor-svg-chart" viewBox="0 0 220 140" preserveAspectRatio="none">
+                            <defs>
+                                <linearGradient id="visitorGradient" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#1E65FF" stop-opacity="0.08" />
+                                    <stop offset="100%" stop-color="#1E65FF" stop-opacity="0.01" />
+                                </linearGradient>
+                            </defs>
+                            <!-- Light subtle fill under the curve -->
+                            <path d="M 0,90 C 18,85 24,80 32,78 C 46,74 58,102 70,102 C 84,102 104,50 118,50 C 132,50 144,76 154,76 C 164,76 174,42 182,42 C 194,42 208,66 220,72 L 220,140 L 0,140 Z" fill="url(#visitorGradient)" />
+
+                            <!-- Dashed wavy blue line -->
+                            <path class="visitor-line-path" d="M 0,90 C 18,85 24,80 32,78 C 46,74 58,102 70,102 C 84,102 104,50 118,50 C 132,50 144,76 154,76 C 164,76 174,42 182,42 C 194,42 208,66 220,72" fill="none" stroke="#1E65FF" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="5 4" />
+
+                            <!-- Hollow circular data points with white fill and blue border -->
+                            <circle cx="32" cy="78" r="4" fill="#FFFFFF" stroke="#1E65FF" stroke-width="2.5" />
+                            <circle cx="70" cy="102" r="4" fill="#FFFFFF" stroke="#1E65FF" stroke-width="2.5" />
+                            <circle cx="118" cy="50" r="4" fill="#FFFFFF" stroke="#1E65FF" stroke-width="2.5" />
+                            <circle cx="154" cy="76" r="4" fill="#FFFFFF" stroke="#1E65FF" stroke-width="2.5" />
+                            <circle cx="182" cy="42" r="4" fill="#FFFFFF" stroke="#1E65FF" stroke-width="2.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- X-Axis Days Row -->
+                <div class="chart-x-axis">
+                    <span class="chart-axis-spacer"></span>
+                    <div class="chart-x-labels">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="content">
-            <h2>Manage your activity from a single Tool.</h2>
-            <p>All your data, tasks, and communications are centralized for total visibility.</p>
-            <ul class="check-list">
-                <li><i class="fa-solid fa-check-circle"></i> Centralized communication hub</li>
-                <li><i class="fa-solid fa-check-circle"></i> Real-time tracking and metrics</li>
-                <li><i class="fa-solid fa-check-circle"></i> Integration with 50+ apps</li>
+            <h2>Manage your workday<br>for maximum efficiency.</h2>
+            <p>Managing your workday for maximum efficiency requires for intentional form planning and prioritization of tasks.</p>
+            <ul class="check-list-figma">
+                <li><i class="fa-solid fa-circle-check"></i> Prioritize tasks with the Eisenhower matrix.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Use time blocking to structure your day.</li>
+                <li><i class="fa-solid fa-circle-check"></i> Leverage task management tools.</li>
             </ul>
-            <a href="#" class="btn btn-dark">Learn More</a>
+            <a href="signup.html" class="btn-pill-dark">Get Orbit For Free</a>
         </div>
     </section>
 
-    <!-- Grid Showcase -->
+    <!-- Grid Showcase: Numbers Behind Our Influence (Figma Design) -->
     <section class="showcase container text-center">
-        <h2>Never Miss A Thing</h2>
-        <p class="subtitle">Stay updated with instant notifications and smart alerts.</p>
+        <h2>Numbers behind our influence.</h2>
+        <p class="subtitle">You can easily view your spending patterns through intuitive visual</p>
         
         <div class="grid-showcase">
             <div class="grid-item item-1">
-                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800&auto=format&fit=crop" alt="Laptop user">
+                <img src="assets/influence-1.webp" alt="Team working with laptop">
             </div>
             <div class="grid-item item-2 bg-orange text-white">
-                <div class="large-number">50%+</div>
-                <p>More Efficiency</p>
-                <span class="small-desc">In daily task management</span>
+                <div class="stat-large-num">100k</div>
+                <div class="stat-text-block">
+                    <h3 class="stat-card-title">Client retention rate</h3>
+                    <p class="stat-card-desc">It reflects customer loyalty, satisfaction in and the overall effectiveness.</p>
+                </div>
             </div>
             <div class="grid-item item-3 bg-blue text-white">
-                <h4>Work</h4>
-                <p>Automate completely.</p>
+                <div class="stat-large-num">90%</div>
+                <div class="stat-text-block">
+                    <h3 class="stat-card-title">Increased sales</h3>
+                    <p class="stat-card-desc">CRM systems can boost sales product by 34% through streamlined.</p>
+                </div>
             </div>
             <div class="grid-item item-4">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=400&auto=format&fit=crop" alt="Phone user">
+                <img src="assets/influence-2.webp" alt="Professional working at desk">
             </div>
             <div class="grid-item item-5 bg-black text-white">
-                <div class="large-number">20+</div>
-                <p>Integrations</p>
-                <span class="small-desc">Available for your apps</span>
+                <div class="stat-large-num">80%</div>
+                <div class="stat-text-block">
+                    <h3 class="stat-card-title">Enhanced data accuracy</h3>
+                    <p class="stat-card-desc">Businesses that use a CRM report up to 30% improvement in data accuracy.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -243,7 +417,7 @@
                 <div class="price">
                     <span class="currency">$</span><span class="amount">29</span><span class="period">/mo</span>
                 </div>
-                <a href="#" class="btn btn-outline">Get Started</a>
+                <a href="404.html" class="btn btn-outline">Get Started</a>
                 <ul class="features-list-card text-left">
                     <li><i class="fa-solid fa-check"></i> Up to 5 users</li>
                     <li><i class="fa-solid fa-check"></i> Basic analytics</li>
@@ -261,7 +435,7 @@
                 <div class="price">
                     <span class="currency">$</span><span class="amount">99</span><span class="period">/mo</span>
                 </div>
-                <a href="#" class="btn btn-light-full">Get Started</a>
+                <a href="404.html" class="btn btn-light-full">Get Started</a>
                 <ul class="features-list-card text-left">
                     <li><i class="fa-solid fa-check"></i> Up to 20 users</li>
                     <li><i class="fa-solid fa-check"></i> Advanced analytics</li>
@@ -278,7 +452,7 @@
                 <div class="price">
                     <span class="currency">$</span><span class="amount">299</span><span class="period">/mo</span>
                 </div>
-                <a href="#" class="btn btn-outline">Get Started</a>
+                <a href="404.html" class="btn btn-outline">Get Started</a>
                 <ul class="features-list-card text-left">
                     <li><i class="fa-solid fa-check"></i> Unlimited users</li>
                     <li><i class="fa-solid fa-check"></i> Full analytics suite</li>
@@ -302,7 +476,7 @@
                 </div>
                 <p>"Stackly has completely transformed how our sales team operates. The AI features save us hours every single week."</p>
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?img=11" alt="User">
+                    <img src="assets/avatar-11.webp" alt="User">
                     <div>
                         <h4>Sarah Jenkins</h4>
                         <span>Sales Director</span>
@@ -316,7 +490,7 @@
                 </div>
                 <p>"The best CRM investment we've made. Implementation was smooth and the team adopted it immediately without issues."</p>
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?img=12" alt="User">
+                    <img src="assets/avatar-12.webp" alt="User">
                     <div>
                         <h4>Michael Chen</h4>
                         <span>CEO, TechGrowth</span>
@@ -330,7 +504,7 @@
                 </div>
                 <p>"Automated reports mean I no longer have to spend my Friday afternoons crunching numbers in Excel."</p>
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?img=33" alt="User">
+                    <img src="assets/avatar-33.webp" alt="User">
                     <div>
                         <h4>Emily Rodriguez</h4>
                         <span>Marketing Lead</span>
@@ -344,7 +518,7 @@
                 </div>
                 <p>"Customer support is fantastic. Whenever we have a question, the Stackly team is there to help us out instantly."</p>
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?img=44" alt="User">
+                    <img src="assets/avatar-44.webp" alt="User">
                     <div>
                         <h4>David Smith</h4>
                         <span>Operations Manager</span>
@@ -358,7 +532,7 @@
                 </div>
                 <p>"Our closing rate improved by 25% in the first quarter after adopting Stackly's pipeline management tools."</p>
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?img=45" alt="User">
+                    <img src="assets/avatar-45.webp" alt="User">
                     <div>
                         <h4>Lisa Thompson</h4>
                         <span>VP of Sales</span>
@@ -372,7 +546,7 @@
                 </div>
                 <p>"Highly intuitive interface. Even our least tech-savvy team members were up and running in just a few days."</p>
                 <div class="user-info">
-                    <img src="https://i.pravatar.cc/150?img=68" alt="User">
+                    <img src="assets/avatar-68.webp" alt="User">
                     <div>
                         <h4>James Wilson</h4>
                         <span>Account Executive</span>
@@ -386,43 +560,51 @@
     <section class="faq container split">
         <div class="faq-intro">
             <h2>Got questions? We've<br>got answers.</h2>
-            <p>Can't find the answer you're looking for? Reach out to our customer support team.</p>
+            <p class="faq-subtitle">The award-winning calendar app with powerful features including intuitive natural language text parsing.</p>
         </div>
         <div class="faq-list">
             <div class="accordion-item active">
                 <div class="accordion-header">
-                    <h4>What payment methods do you accept?</h4>
-                    <i class="fa-solid fa-minus"></i>
+                    <span>How does Orbit help in managing customer data?</span>
+                    <div class="faq-icon-circle">
+                        <i class="fa-solid fa-chevron-up"></i>
+                    </div>
                 </div>
                 <div class="accordion-body">
-                    <p>We accept all major credit cards including Visa, Mastercard, and American Express. We also support PayPal and wire transfers for annual enterprise plans.</p>
+                    <p>Orbit centralizes all customer information in a single database, making it easy to access complete profiles, including contact details, past interactions, purchase history, and preferences this comprehensive view allows.</p>
                 </div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h4>Can I cancel my subscription anytime?</h4>
-                    <i class="fa-solid fa-plus"></i>
+                    <span>Does Orbit provide automated workflow features?</span>
+                    <div class="faq-icon-circle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                 </div>
                 <div class="accordion-body" style="display: none;">
-                    <p>Yes, you can cancel your subscription at any time from your account settings. You will have access to your plan until the end of the billing cycle.</p>
+                    <p>Yes, Orbit provides automated workflow features that help eliminate repetitive manual tasks, automate notification triggers, and keep your entire team synchronized.</p>
                 </div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h4>Do you offer a free trial?</h4>
-                    <i class="fa-solid fa-plus"></i>
+                    <span>How does Mintly's personalized alerts and notifications work?</span>
+                    <div class="faq-icon-circle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                 </div>
                 <div class="accordion-body" style="display: none;">
-                    <p>We offer a 14-day free trial on all plans, no credit card required.</p>
+                    <p>Mintly monitors activity across your sales pipeline and delivers real-time notifications via customizable alerts, daily digests, and third-party integrations.</p>
                 </div>
             </div>
             <div class="accordion-item">
                 <div class="accordion-header">
-                    <h4>How secure is my data?</h4>
-                    <i class="fa-solid fa-plus"></i>
+                    <span>Can I use Mintly to manage recurring payments and subscriptions?</span>
+                    <div class="faq-icon-circle">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                 </div>
                 <div class="accordion-body" style="display: none;">
-                    <p>Your data is secured with enterprise-grade encryption and we are SOC2 compliant.</p>
+                    <p>Absolutely. Mintly integrates seamlessly with leading payment gateways to track recurring invoices, manage plan renewals, and prevent subscription churn.</p>
                 </div>
             </div>
         </div>
@@ -430,13 +612,35 @@
 
     <!-- CTA Section -->
     <section class="cta-section container">
-        <div class="cta-card blue-bg text-center">
-            <svg class="cta-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="white"/>
-                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="white"/>
-            </svg>
-            <h2 class="text-white">The modern solutions<br>for any agency.</h2>
-            <a href="#" class="btn btn-dark">Get Started Now</a>
+        <div class="cta-card text-center">
+            <!-- Stackly Logo watermarks on both sides -->
+            <img src="assets/cta-watermark-left.webp" alt="" class="cta-watermark-left" aria-hidden="true">
+            <img src="assets/cta-watermark-right.webp" alt="" class="cta-watermark-right" aria-hidden="true">
+
+            <div class="cta-content">
+                <!-- White Stackly Logo in center -->
+                <div class="cta-logo-wrap">
+                    <img src="assets/stackly-icon-white.webp" alt="Stackly" class="cta-logo-icon">
+                </div>
+
+                <!-- Title -->
+                <h2 class="cta-title">The modern solutions<br>to run your agency.</h2>
+
+                <!-- Action Button -->
+                <a href="signup.html" class="btn-cta-demo">Request A Demo</a>
+
+                <!-- Trust / Benefit Badges -->
+                <div class="cta-perks">
+                    <span class="cta-perk">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                        No credit card required.
+                    </span>
+                    <span class="cta-perk">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16"/><path d="M16 21h5v-5"/></svg>
+                        Cancel at anytime.
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -444,61 +648,52 @@
     <footer class="footer container">
         <div class="footer-top">
             <div class="footer-brand">
-                <div class="logo">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                        <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-                    </svg>
-                    <span>STACKLY</span>
-                </div>
+                <a href="index.html" class="logo">
+                    <img src="assets/footer-logo.webp" alt="Stackly" class="footer-big-logo">
+                </a>
             </div>
             <div class="footer-links">
                 <div class="link-col">
-                    <h4>Company</h4>
+                    <h4>About</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Newsroom</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="link-col">
-                    <h4>Product</h4>
-                    <ul>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Changelog</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="404.html">Career</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
                 <div class="link-col">
                     <h4>Resources</h4>
                     <ul>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="blog.html">Blog & Article</a></li>
+                        <li><a href="404.html">Case Studies</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="404.html">Error - 404</a></li>
                     </ul>
                 </div>
-                <div class="link-col">
-                    <h4>Follow Us</h4>
+                <div class="link-col contact-col">
+                    <h4>Get in touch</h4>
+                    <p class="footer-email"><a href="mailto:Stackly@gmail.com">Stackly@gmail.com</a></p>
                     <div class="social-links">
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Stackly. All rights reserved.</p>
+            <p>&copy; 2026 Stackly, Inc. All rights reserved.</p>
             <div class="bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Changelog</a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>

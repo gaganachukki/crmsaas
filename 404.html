@@ -8,15 +8,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="CSS/404.css">
 </head>
 <body class="page-404">
     <main class="error-wrapper">
         <div class="error-content text-center">
+            <a href="index.html" class="logo" style="margin-bottom: 24px;">
+                <img src="assets/logo.webp" alt="Stackly" class="brand-logo">
+            </a>
             
             <div class="error-visuals">
                 <div class="error-code">404</div>
-                <img src="https://illustrations.popsy.co/amber/page-not-found.svg" alt="Confused character 404" class="error-illustration">
+                <img src="assets/404-illustration.webp" alt="Confused character 404" class="error-illustration floating-element">
             </div>
 
             <h2 class="error-message">
@@ -28,5 +32,8 @@
             
         </div>
     </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>

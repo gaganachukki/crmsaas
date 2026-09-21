@@ -74,7 +74,7 @@ body.auth-page {
     display: flex;
     align-items: center;
     text-align: center;
-    margin: 32px 0;
+    margin: 20px 0;
     color: var(--gray-text);
 }
 .divider::before, .divider::after {
@@ -85,6 +85,46 @@ body.auth-page {
 .divider span {
     padding: 0 16px;
     font-size: 0.9rem;
+}
+
+.role-selector {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.role-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: var(--white);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--gray-text);
+    cursor: pointer;
+    font-family: var(--font-main);
+    transition: all 0.2s ease;
+}
+.role-btn:hover {
+    border-color: #cbd5e1;
+    color: var(--dark-bg);
+    background: var(--light-bg);
+}
+.role-btn.active {
+    border-color: var(--primary-blue);
+    background: rgba(30, 101, 255, 0.08);
+    color: var(--primary-blue);
+    box-shadow: 0 2px 8px rgba(30, 101, 255, 0.12);
+}
+.role-btn i {
+    font-size: 1rem;
+}
+.role-btn.active i {
+    color: var(--primary-blue);
 }
 
 .auth-form .input-group {
@@ -223,6 +263,13 @@ body.auth-page {
     font-size: 1.1rem;
     margin-bottom: 32px;
 }
+.dash-logo .brand-logo {
+    height: 22px;
+    width: auto;
+    max-width: 110px;
+    object-fit: contain;
+    display: block;
+}
 .dash-nav {
     list-style: none; padding: 0; margin: 0;
 }
@@ -330,7 +377,38 @@ body.auth-page {
 
 /* Responsive */
 @media (max-width: 992px) {
-    .auth-container { flex-direction: column; height: auto; overflow: visible;}
-    .auth-left { display: none; } /* Hide mockup on mobile for clean auth */
-    .auth-right { flex: 1; height: 100vh; padding: 24px;}
+    body.auth-page {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+    .auth-container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        overflow: visible;
+    }
+    .auth-left {
+        display: none; /* Hide mockup on mobile for clean auth */
+    }
+    .auth-right {
+        flex: 1;
+        min-height: 100vh;
+        height: auto;
+        padding: 32px 20px;
+    }
 }
+
+@media (max-width: 480px) {
+    .auth-form-wrapper h1.text-blue {
+        font-size: 2rem;
+    }
+    .role-selector {
+        gap: 8px;
+    }
+    .role-btn {
+        padding: 10px 8px;
+        font-size: 0.85rem;
+    }
+}
+

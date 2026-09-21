@@ -8,37 +8,43 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/animations.css">
     <link rel="stylesheet" href="CSS/contact.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar container">
-        <div class="logo">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-            </svg>
-            <span>STACKLY</span>
-        </div>
-        <ul class="nav-links">
+        <a href="index.html" class="logo">
+            <img src="assets/logo.webp" alt="Stackly" class="brand-logo">
+        </a>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="blog.html">Blog</a></li>
             <li><a href="contact.html" class="active">Contact</a></li>
+            <li class="mobile-login-item"><a href="login.html"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a></li>
         </ul>
-        <div class="nav-actions" style="display: flex; gap: 24px; align-items: center;">
-            <a href="login.html" style="font-weight: 500;">Login</a>
+        <div class="nav-actions">
+            <a href="login.html" class="btn-login">Login</a>
             <a href="signup.html" class="btn btn-primary">Sign Up</a>
+            <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+                <svg class="icon-menu" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                <svg class="icon-close" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
         </div>
     </nav>
 
     <!-- Contact Hero / Form Section -->
-    <section class="contact-hero container split">
-        <div class="contact-heading">
-            <h1>We are here to<br>help you.</h1>
+    <section class="contact-hero container">
+        <div class="contact-hero-header text-center">
+            <span class="contact-hero-badge">Contact Us</span>
         </div>
+        <div class="contact-hero-split split">
+            <div class="contact-heading">
+                <h1 class="typewriter-hero">We are here to<br>help you.</h1>
+            </div>
         <div class="contact-form-wrapper bg-light">
             <form class="contact-form">
                 <div class="form-group">
@@ -57,8 +63,9 @@
                     <label for="message">Message *</label>
                     <textarea id="message" rows="4" placeholder="Write your message"></textarea>
                 </div>
-                <button type="button" class="btn btn-dark">Send Message</button>
+                <button type="button" class="btn btn-dark" onclick="window.location.href='404.html'">Send Message</button>
             </form>
+        </div>
         </div>
     </section>
 
@@ -83,6 +90,50 @@
                 <h4>Chat support.</h4>
                 <p class="time">Mon-Fri from 8am to 5pm.</p>
                 <p class="detail">Stackly@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Google Map Section -->
+    <section class="contact-map-section container">
+        <div class="map-header">
+            <span class="map-badge">Our Location</span>
+            <h2>Visit our Salem office</h2>
+            <p>Drop by our headquarters or plan a visit. We are located in Salem, Tamil Nadu.</p>
+        </div>
+        <div class="map-card">
+            <div class="map-container">
+                <iframe 
+                    title="Stackly Salem Location"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d125027.67499092454!2d78.0772719!3d11.6538411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1ccf52cba0b%3A0xee9989007068ca47!2sSalem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="eager" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div class="map-info-bar">
+                <div class="map-info-item">
+                    <div class="map-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h5>Location</h5>
+                        <p>Salem, Tamil Nadu, India</p>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <div class="map-icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <h5>Office Hours</h5>
+                        <p>Mon - Fri: 9:00 AM - 6:00 PM IST</p>
+                    </div>
+                </div>
+                <div class="map-info-item">
+                    <a href="https://maps.google.com/maps?q=Salem,%20Tamil%20Nadu" target="_blank" rel="noopener noreferrer" class="btn btn-primary map-directions-btn">
+                        <i class="fa-solid fa-diamond-turn-right"></i> Get Directions
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -141,7 +192,7 @@
                 <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5 2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="white"/>
             </svg>
             <h2 class="text-white">The modern solutions<br>to run your agency.</h2>
-            <a href="#" class="btn btn-dark">Request A Demo</a>
+            <a href="404.html" class="btn btn-dark">Request A Demo</a>
             <div class="cta-guarantees">
                 <span><i class="fa-regular fa-square-check"></i> No credit card required.</span>
                 <span><i class="fa-regular fa-square-check"></i> Cancel at anytime.</span>
@@ -150,24 +201,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer container blog-footer">
-        <div class="footer-top split-footer">
-            <div class="footer-brand big-brand">
-                <div class="logo">
-                    <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M11.999 1.401a.75.75 0 0 0-.585.275l-4.14 5.37a.75.75 0 1 0 1.18.91l3.54-4.595v16.71a.75.75 0 0 0 1.5 0V3.361l3.54 4.595a.75.75 0 1 0 1.18-.91l-4.14-5.37a.75.75 0 0 0-.585-.275Z" fill="#1E65FF"/>
-                        <path d="M5.25 12a.75.75 0 0 1 .75.75v5.5a2.5 2.5 0 0 0 2.5-2.5h7a2.5 2.5 0 0 0 2.5-2.5v-5.5a.75.75 0 0 1 1.5 0v5.5a4 4 0 0 1-4 4h-7a4 4 0 0 1-4-4v-5.5A.75.75 0 0 1 5.25 12Z" fill="#1E65FF"/>
-                    </svg>
-                    <span style="font-size: 2.5rem; color: #0F1115;">STACKLY</span>
-                </div>
+    <footer class="footer container">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <a href="index.html" class="logo">
+                    <img src="assets/footer-logo.webp" alt="Stackly" class="footer-big-logo">
+                </a>
             </div>
-            <div class="footer-links three-cols">
+            <div class="footer-links">
                 <div class="link-col">
                     <h4>About</h4>
                     <ul>
                         <li><a href="about.html">About Us</a></li>
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">Career</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="404.html">Career</a></li>
                         <li><a href="pricing.html">Pricing</a></li>
                     </ul>
                 </div>
@@ -175,33 +222,34 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="blog.html">Blog & Article</a></li>
-                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="404.html">Case Studies</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="#">Error - 404</a></li>
+                        <li><a href="404.html">Error - 404</a></li>
                     </ul>
                 </div>
-                <div class="link-col">
+                <div class="link-col contact-col">
                     <h4>Get in touch</h4>
-                    <ul>
-                        <li style="color:var(--dark-bg); font-weight:600; margin-bottom:16px;">Stackly@gmail.com</li>
-                    </ul>
-                    <div class="social-links dark-socials">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <p class="footer-email"><a href="mailto:Stackly@gmail.com">Stackly@gmail.com</a></p>
+                    <div class="social-links">
+                        <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="404.html" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Stackly. Inc. All rights reserved.</p>
+            <p>&copy; 2026 Stackly, Inc. All rights reserved.</p>
             <div class="bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Changelog</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Changelog</a>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/animations.js"></script>
 </body>
 </html>
