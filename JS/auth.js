@@ -90,12 +90,12 @@ document.addEventListener('DOMContentLoaded', () => {
         adminRoleBtn.addEventListener('click', () => setRole('admin'));
     }
 
-    // Google button handles role redirection too
+    // Google button redirects to 404 page
     const googleBtn = document.querySelector('.btn-google');
     if (googleBtn) {
         googleBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            handleAuth();
+            window.location.href = '404.html';
         });
     }
 
