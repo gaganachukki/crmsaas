@@ -133,7 +133,7 @@ body.dashboard-body.admin-theme {
 .search-bar i { color: var(--primary-blue); margin-right: 12px; }
 .search-bar input { border: none; background: transparent; width: 100%; outline: none; font-family: var(--font-main); }
 .topbar-actions { display: flex; align-items: center; gap: 24px; }
-.status-indicator { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(30, 101, 255, 0.2); background: rgba(30, 101, 255, 0.04); color: var(--primary-blue); padding: 6px 12px; border-radius: 100px; }
+.status-indicator { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(30, 101, 255, 0.2); background: rgba(30, 101, 255, 0.04); color: var(--primary-blue); padding: 6px 12px; border-radius: 100px; white-space: nowrap; }
 .dot { width: 8px; height: 8px; border-radius: 50%; }
 .dot.green { background-color: #10B981; }
 .icon-btn { background: transparent; border: none; font-size: 1.25rem; color: var(--gray-text); cursor: pointer; transition: color 0.2s; }
@@ -459,6 +459,7 @@ body.dashboard-body.admin-theme {
     font-size: 0.9rem;
     font-weight: 600;
     color: var(--primary-blue);
+    word-break: break-all;
 }
 
 /* ------------------------------------------
@@ -577,11 +578,24 @@ body.dashboard-body.admin-theme {
 .log-level.info { background: rgba(59,130,246,0.2); color: #60A5FA; }
 .log-level.warn { background: rgba(245,158,11,0.2); color: #FBBF24; }
 .log-level.error { background: rgba(239,68,68,0.2); color: #F87171; }
-.log-msg { color: #E2E8F0; }
+.log-msg { 
+    color: #E2E8F0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
 
 /* ==========================================
    Responsive Breakpoints for Admin Dashboard
    ========================================== */
+
+@media (max-width: 1200px) {
+    .billing-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .security-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
 @media (max-width: 992px) {
     .mobile-sidebar-toggle {
@@ -606,11 +620,24 @@ body.dashboard-body.admin-theme {
     .dashboard-content {
         padding: 24px 20px;
     }
-    .security-grid {
-        grid-template-columns: 1fr;
-    }
     .node-status-bar {
         grid-template-columns: 1fr;
+    }
+    .terminal-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .terminal-actions {
+        flex-wrap: wrap;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    .search-bar {
+        max-width: 250px;
     }
 }
 
@@ -694,7 +721,7 @@ body.dashboard-body.admin-theme {
 }
 
 @media (max-width: 576px) {
-    .stats-grid {
+    .stats-grid, .billing-kpi-grid {
         grid-template-columns: 1fr;
     }
     .search-bar {

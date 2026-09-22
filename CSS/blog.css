@@ -186,3 +186,26 @@
     }
 }
 
+
+/* Make article card an interactive link block */
+a.article-card {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: transform 0.25s ease;
+}
+a.article-card:hover {
+    transform: translateY(-4px);
+}
+a.article-card img {
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+a.article-card:hover img {
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15);
+}
+a.article-card h4 {
+    transition: color 0.2s ease;
+}
+a.article-card:hover h4 {
+    color: var(--primary-blue);
+}

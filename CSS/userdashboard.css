@@ -881,9 +881,15 @@ body.dashboard-body {
     .kanban-board {
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
+    .settings-grid-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
+    .settings-form-row {
+        grid-template-columns: 1fr;
+    }
     .sidebar {
         width: 100vw;
         width: 100%;
@@ -963,9 +969,6 @@ body.dashboard-body {
     .topbar-actions .user-profile span,
     .topbar-actions .user-profile i {
         display: none;
-    }
-    .settings-form-row {
-        grid-template-columns: 1fr;
     }
     .toast-msg {
         right: 16px;

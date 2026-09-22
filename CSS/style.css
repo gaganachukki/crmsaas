@@ -53,6 +53,7 @@ img {
 .text-center { text-align: center; }
 .text-left { text-align: left; }
 .text-white { color: var(--white); }
+.text-white p, .text-white span { color: rgba(255, 255, 255, 0.9); }
 .text-white-light { color: rgba(255, 255, 255, 0.8); }
 .bg-light { background-color: var(--light-bg); border-radius: 24px;}
 .bg-blue { background-color: var(--primary-blue); }
@@ -122,6 +123,7 @@ p {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    white-space: nowrap;
 }
 .btn-primary {
     background-color: var(--primary-blue);
@@ -2013,9 +2015,20 @@ p {
         font-size: 1.1rem;
     }
 
-    .btn {
+    .btn, .btn-pill-dark, .btn-cta-demo {
         padding: 12px 22px;
         font-size: 0.95rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-sizing: border-box;
+    }
+    .nav-actions .btn,
+    .nav-actions .btn-primary {
+        width: auto;
+        display: inline-flex;
     }
     .stat-large-num {
         font-size: 2.6rem;
