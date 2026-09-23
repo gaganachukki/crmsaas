@@ -138,6 +138,7 @@
     align-items: center;
     justify-content: center;
     font-size: 0.75rem;
+    flex-shrink: 0;
 }
 .contact-faq-list .accordion-item.active {
     background-color: var(--dark-bg);
@@ -148,7 +149,7 @@
 }
 .contact-faq-list .accordion-item.active .accordion-header i {
     background: white;
-    color: var(--dark-bg);
+    color: var(--dark-bg) !important;
 }
 .contact-faq-list .accordion-item.active .accordion-body {
     color: rgba(255, 255, 255, 0.8);

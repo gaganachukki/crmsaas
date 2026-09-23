@@ -1379,6 +1379,7 @@ p {
     align-items: center;
     justify-content: center;
     font-size: 12px;
+    flex-shrink: 0;
     transition: background-color 0.25s ease, color 0.25s ease;
 }
 .accordion-item.active .accordion-header {
