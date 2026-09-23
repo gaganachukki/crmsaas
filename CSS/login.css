@@ -22,6 +22,7 @@ body.login-page {
     background: var(--white);
     position: relative;
     z-index: 10;
+    overflow-y: auto;
 }
 
 .login-nav {
